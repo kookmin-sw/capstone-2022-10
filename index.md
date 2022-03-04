@@ -2,7 +2,7 @@
 
 ## 📝 프로젝트 소개
 
-![Image](../img/main.png)
+![Image](img/main.png)
 
 - 프로젝트명 : How Cook
 - 프로젝트 요약: 재료 이미지 인식을 통한 레시피 추천 서비스
