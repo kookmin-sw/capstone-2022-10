@@ -52,3 +52,5 @@
 [Go to HowCook](https://github.com/kookmin-sw/cap-template/edit/master/index.md)
 
 ## 📚 기타
+
+추후 업로드 예정

@@ -49,6 +49,9 @@
 
 ## 🔎 사용법
 
-[Go to HowCook](https://github.com/kookmin-sw/cap-template/edit/master/index.md)
+[Go to How Cook information](https://kookmin-sw.github.io/capstone-2022-10/)
+[Go to How Cook Page]()
 
 ## 📚 기타
+
+추후 업로드 예정
