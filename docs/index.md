@@ -1,37 +1,54 @@
-## Welcome to GitHub Pages
+# 캡스톤디자인 10팀
 
-You can use the [editor on GitHub](https://github.com/kookmin-sw/capstone-2022-10/edit/master/docs/index.md) to maintain and preview the content for your website in Markdown files.
+## 📝 프로젝트 소개
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+![Image](../img/main.png)
 
-### Markdown
+- 프로젝트명 : How Cook
+- 프로젝트 요약: 재료 이미지 인식을 통한 레시피 추천 서비스
+- 세부내용: 추후 작성 예정
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## 📜 Abstract
 
-```markdown
-Syntax highlighted code block
+추후 작성 예정
 
-# Header 1
-## Header 2
-### Header 3
+## 💻 소개 영상
 
-- Bulleted
-- List
+추후 업로드 예정
+[영상 링크]()
 
-1. Numbered
-2. List
+## 👨‍🍳 팀 소개
 
-**Bold** and _Italic_ and `Code` text
+1. 강지수
 
-[Link](url) and ![Image](src)
-```
+- 재료 이미지 데이터 구축 및 모델 학습
+- Student ID: 20173460
+- Email: tn1078@kookmin.ac.kr
+- Github: [@kjsoo-1010](https://github.com/kjsoo-1010)
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+2. 박준용
 
-### Jekyll Themes
+- 재료 이미지 데이터 구축 및 모델 학습
+- Student ID: 20195298
+- Email: Jypark93@kookmin.ac.kr
+- Github:[@junyong1111](https://github.com/junyong1111)
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/kookmin-sw/capstone-2022-10/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+3. 이원주
 
-### Support or Contact
+- Backend, Frontend
+- Student ID: 20171671
+- Email: wonjulee.dev@gmail.com
+- Github: [@WonjuLee](https://github.com/wonju-dev)
 
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+4. 이세희
+
+- Frontend, Backend
+- Student ID: 20191987
+- Email: tpfktpgml24@gmail.com
+- Github: [@Sehee-Lee-01](https://github.com/Sehee-Lee-01)
+
+## 🔎 사용법
+
+[Go to HowCook](https://github.com/kookmin-sw/cap-template/edit/master/index.md)
+
+## 📚 기타
