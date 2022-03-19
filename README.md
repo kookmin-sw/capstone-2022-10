@@ -21,7 +21,7 @@
 
 1. 강지수
 
-- 재료 이미지 데이터 구축 및 모델 학습
+- 재료 이미지, 레시피 크롤링, Frontend
 - Student ID: 20173460
 - Email: tn1078@kookmin.ac.kr
 - Github: [@kjsoo-1010](https://github.com/kjsoo-1010)
@@ -35,7 +35,7 @@
 
 3. 이원주
 
-- Backend, Frontend
+- DB 설계, Backend, Frontend
 - Student ID: 20171671
 - Email: wonjulee.dev@gmail.com
 - Github: [@WonjuLee](https://github.com/wonju-dev)
@@ -49,8 +49,8 @@
 
 ## 🔎 사용법
 
-[Go to How Cook information](https://kookmin-sw.github.io/capstone-2022-10/)
-[Go to How Cook Page]()
+- [Go to How Cook information](https://kookmin-sw.github.io/capstone-2022-10/)
+- [Go to How Cook Page]()
 
 ## 📚 기타
 
