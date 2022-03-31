@@ -1,57 +1,65 @@
-# 캡스톤디자인 10팀
+# 2022 Capstone10 Frontend
 
-## 📝 프로젝트 소개
+# How to Start
 
-![Image](/img/main.png)
+## 초기 환경설정
+### 1. 기본 설정
+- Typescript 
+- React
+```shell
+yarn add yarn create-react-app styling-with-styled-components --template typescript 
+yarn add typescript @types/node @types/react @types/react-dom @types/jest
+```
+### 2. 그 외 기능들
+- React Router Dom v6
+- Recoil
+- Styled Components
+```shell
+yarn add react-router-dom @types/react-router-dom
 
-- 프로젝트명 : How Cook
-- 프로젝트 요약: 재료 이미지 인식을 통한 레시피 추천 서비스
-- 세부내용: 추후 작성 예정
+yarn add recoil @types/recoil
 
-## 📜 Abstract
+yarn add styled-components @types/styled-components
+yarn add babel-plugin-styled-components
+```
+## 시작하는 법
 
-추후 작성 예정
+### 1. 로컬 환경
 
-## 💻 소개 영상
+```shell
+yarn start
+```
+## FE 구조
+```
+...
+├── public/
+│   ├── image/
+│   │   └──...
+│   ├── favicon.ico
+│   └── index.html
+├── src/
+│  ├── api/
+│  ├── component/
+│  │  ├──header/
+│  │  └──navigationBar/
+│  ├── hook/
+│  ├── router/
+│  ├── page/
+│  ├── state/
+│  ├── App.tsx
+│  └── index.tsx
+...
+```
+### 1. `api`
+### 2. `componenet`
+### 3. `hook`
+### 4. `router`
+### 5. `page`
+### 6. `state`
 
-추후 업로드 예정
-[영상 링크]()
+## 
 
-## 👨‍🍳 팀 소개
-
-1. 강지수
-
-- 재료 이미지, 레시피 크롤링, Frontend
-- Student ID: 20173460
-- Email: tn1078@kookmin.ac.kr
-- Github: [@kjsoo-1010](https://github.com/kjsoo-1010)
-
-2. 박준용
-
-- 재료 이미지 데이터 구축 및 모델 학습
-- Student ID: 20195298
-- Email: Jypark93@kookmin.ac.kr
-- Github:[@junyong1111](https://github.com/junyong1111)
-
-3. 이원주
-
-- DB 설계, Backend, Frontend
-- Student ID: 20171671
-- Email: wonjulee.dev@gmail.com
-- Github: [@WonjuLee](https://github.com/wonju-dev)
-
-4. 이세희
-
-- Frontend, Backend
-- Student ID: 20191987
-- Email: tpfktpgml24@gmail.com
-- Github: [@Sehee-Lee-01](https://github.com/Sehee-Lee-01)
-
-## 🔎 사용법
-
-- [Go to How Cook information](https://kookmin-sw.github.io/capstone-2022-10/)
-- [Go to How Cook Page]()
-
-## 📚 기타
-
-추후 업로드 예정
+## Copyright
+- Icons
+    - 아이콘 저작권(해당하는 아이콘 사용 페이지에 표시)
+        -  [Link to icon8.com](https://icons8.com/icons/set/heart)
