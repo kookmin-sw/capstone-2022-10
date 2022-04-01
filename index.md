@@ -26,12 +26,11 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 💻 <span style="color:#FF9F1C">소개 자료</span>
 
-> 📎 [How Cook GitHub Repository](https://github.com/kookmin-sw/capstone-2022-10)
-> 📎 [How Cook GitHub Wiki](https://github.com/kookmin-sw/capstone-2022-10/wiki)
-> ⬆ 더 자세한 정보를 알고 싶다면 GitHub Wiki로 이동하세요.
-> 📎 [How Cook 중간 발표 PDF]()(추후 업로드 예정)
-> 📎 [How Cook 소개 영상](https://drive.google.com/file/d/1XycH4Z82Xn06QCra3Sg6E4PctV6QyFq5/view?usp=sharing)
-> 📎 [How Cook 서비스]()(추후 배포 예정)
+- 📎 [How Cook GitHub Repository](https://github.com/kookmin-sw/capstone-2022-10)
+- 📎 [How Cook GitHub Wiki](https://github.com/kookmin-sw/capstone-2022-10/wiki)
+- 📎 [How Cook 중간 발표 PDF]()(추후 업로드 예정)
+- 📎 [How Cook 소개 영상](https://drive.google.com/file/d/1XycH4Z82Xn06QCra3Sg6E4PctV6QyFq5/view?usp=sharing)
+- 📎 [How Cook 서비스]()(추후 배포 예정)
 
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
