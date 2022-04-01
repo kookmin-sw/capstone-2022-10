@@ -12,7 +12,6 @@
 **이 서비스를 통해 1인 가구 및 가정 내에서 사진 촬영 한 번으로 건강한 식문화에 접근할 수 있는 환경을 구현하고자 합니다.**
 
 
-3. 레시피 공유 **커뮤니티**
 
 ## 📝 <span style="color:#FF9F1C">Project Abstract</span>
 **How Cook** : Recipe recommendation service through material image recognition
