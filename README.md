@@ -1,4 +1,6 @@
 # 캡스톤디자인 10팀 README.md
+**＊ 코드는 위쪽 branch를 참고해주세요!**
+
 ![Image](/img/mainLogoOrange.png)
 ## 📝 <span style="color:#FF9F1C">프로젝트 소개</span>
 
