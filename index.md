@@ -78,7 +78,8 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ### 🛠 기술 스택
 #### 🍴 Frontend
-##### 📄 [사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
+##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
+##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
 
 
 - Language: `Javascript`/`Typescript`
