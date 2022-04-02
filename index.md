@@ -63,7 +63,9 @@ We want to implement a function that searches for a recipe based on the recognit
 	- Github: [@Sehee-Lee-01](https://github.com/Sehee-Lee-01)
 
 ## 🔎 <span style="color:#FF9F1C">기술 스택 및 사용법</span>
-#### 🍴 Frontend
+
+<details>
+<summary>🍴 Frontend</summary>
 
 - Language: `Javascript`/`Typescript`
 - Framework: React
@@ -72,9 +74,9 @@ We want to implement a function that searches for a recipe based on the recognit
 ##### [📎Frontend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
 ##### [📄Frontend 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
 
-
-
-#### 🍴 Backend
+</details>
+<details>
+<summary>🍴 Backend</summary>
 
 - Language: `Node.js`/`Typescript`
 - Framework: `Express`
@@ -83,9 +85,9 @@ We want to implement a function that searches for a recipe based on the recognit
 ##### [📎Backend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
 ##### [📄Backend 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
 
-
-
-#### 🍴 Data Modeling
+</details>
+<details>
+<summary>🍴 Data Modeling</summary>
 
 - Image: `OpenCV`, `YOLO`
 - ML: `TensorFlow`
@@ -94,18 +96,23 @@ We want to implement a function that searches for a recipe based on the recognit
 ##### [📎Data Modeling Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
 ##### [📄Data Modeling 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 
+</details>
+<details>
+<summary>🍴 Devops</summary>
 
-
-#### 🍴 Devops
 - Deploy: `AWS`, `Firebase`(추후 결정)
 - Deployment Management: `GitHub Actions`
 
 
+</details>
+<details>
+<summary>🍴 Co-Working</summary>
 
-#### 🍴 Co-Working
 - Repository: `Git`/`GitHub`
 - Record: `Notion`
 - Notification: `Slack`
 
+</details>
+	
 ## 📚 <span style="color:#FF9F1C"> 기타</span>
 
