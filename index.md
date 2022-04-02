@@ -69,14 +69,17 @@ We want to implement a function that searches for a recipe based on the recognit
 ### 📏 시스템 구성도
 ![스크린샷, 2022-04-02 20-17-19](https://user-images.githubusercontent.com/85275893/161381061-608effbb-3391-43e9-91d0-8aa673ff528e.png)
 
-#### [🛠분야별 기술 스택](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
+#### [🛠분야별 기술 스택(링크)](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
 
+### Frontend
 ##### [📎Frontend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
 ##### [📄Frontend 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
 
+### Backend
 ##### [📎Backend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
 ##### [📄Backend 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
 
+### Data Modeling
 ##### [📎Data Modeling Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
 ##### [📄Data Modeling 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 	
