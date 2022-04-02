@@ -63,27 +63,32 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 🔎 <span style="color:#FF9F1C">사용 환경 설정 및 시작하기</span>
 
-## 🛠 Frontend
+<details>
+<summary >🛠 Frontend</summary>
 
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
 
 ### yarn package 설치
 - yarn 설치 후 진행
 - package.json 패키지 설치 
+```shell
+yarn install
+```
 
 <details>
 <summary>로컬 환경 실행</summary>
 <div markdown="1"> 
 
-* 로컬 환경 실행
-
 ```shell
 yarn start
 ```
 
-</div>
 </details>
-## 🛠 Backend
+
+
+<details>
+<summary >🛠 Backend</summary>
+
 
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
 
@@ -119,28 +124,22 @@ DB_LOCAL_USERNAME = root # Username
 DB_LOCAL_PASSWORD = 0000 # Password of DB
 DB_LOCAL_DATABASENAME = capstone # DB name
 ```
-<details>
-<summary>로컬 환경 실행</summary>
-<div markdown="1"> 
 
-* 로컬 환경 실행
+### 로컬 환경 실행
 
 ```shell
 yarn local
 ```
 
-</div>
 </details>
 
-
-## 🛠 Data Modeling Server
+<details>
+<summary >🛠 Data Modeling Server</summary>
 
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
 ### 필수 라이브러리 설치
 
-<details>
-<summary> YOLO 설치</summary>
-<div markdown="1"> 
+### 1. YOLO 설치
 
 ```shell
 pip install opencv-python
@@ -149,43 +148,25 @@ pip install cmake
 pip install dlib
 ```
 
-</div>
-</details>
-
-<details>
-<summary>Tensorflow 설치</summary>
-<div markdown="1"> 
+### 2. Tensorflow 설치
 
 ```shell
 pip install opencv-python
 pip install tensorflow
 pip install numpy
 ```
-
-</div>
-</details>
-
-
-<details>
-<summary>OCR 설치</summary>
-<div markdown="1"> 
+	
+### 3. OCR 설치
 
 ```shell
 sudo apt install tesseract-ocr 
 pip install pytesseract
 ```
 
-</div>
-</details>
-<details>
-<summary>로컬 환경 실행</summary>
-<div markdown="1"> 
-
-* 로컬 환경 실행
+###  4. 로컬 환경 실행
 
 ```shell
 # 추후 업로드 예정
 ```
 
-</div>
 </details>
