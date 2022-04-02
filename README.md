@@ -119,7 +119,7 @@ yarn local
 
 ## 🛠 Data Modeling Server
 
-### [📎Data Modeling Server Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
+### [📎Data Modeling Server Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
 
 ### 패키지 설치
 ```shell
