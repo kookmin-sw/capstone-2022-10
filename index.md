@@ -76,7 +76,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 #### 🍴 Backend
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
-#### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
+##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
 
 
 - Language: `Node.js`/`Typescript`
@@ -87,7 +87,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 #### 🍴 Data Modeling
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
-#### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
+##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 
 - Image: `OpenCV`, `YOLO`
 - ML: `TensorFlow`
