@@ -34,7 +34,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
-#### [📍팀 약속](https://github.com/kookmin-sw/capstone-2022-10/wiki/%ED%8C%80-%EC%95%BD%EC%86%8D)
+#### [📍팀에 대해 더 알아보기](https://github.com/kookmin-sw/capstone-2022-10/wiki/%ED%8C%80-%EC%95%BD%EC%86%8D)
 
 1. 👩 강지수
 
