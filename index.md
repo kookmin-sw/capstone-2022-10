@@ -97,7 +97,7 @@ We want to implement a function that searches for a recipe based on the recognit
 - Image: `OpenCV`, `YOLO`
 - ML: `TensorFlow`
 - Text: `Tessract OCR`
-- Server: `Firebase` or `Django`(추후 결정)
+- Server: `Firebase`
 ##### [📎Data Modeling Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
 ##### [📄Data Modeling 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 
@@ -105,7 +105,7 @@ We want to implement a function that searches for a recipe based on the recognit
 <details>
 <summary>🍴 Devops</summary>
 
-- Deploy: `AWS`, `Firebase`(추후 결정)
+- Deploy: `AWS`, `Firebase`
 - Deployment Management: `GitHub Actions`
 
 
