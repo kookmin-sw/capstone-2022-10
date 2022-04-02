@@ -72,6 +72,9 @@ We want to implement a function that searches for a recipe based on the recognit
 yarn start
 ```
 ## 🛠 Backend
+
+- [Backend 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
+
 ### yarn package 설치
 - yarn 설치 후 진행
 - package.json 패키지 설치 
