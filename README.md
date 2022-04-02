@@ -123,10 +123,9 @@ yarn local
 ### 필수 라이브러리 설치
 
 <details>
-<summary>  YOLO 설치</summary>
+<summary> YOLO 설치</summary>
 <div markdown="1"> 
 
-* YOLO테스트를 위한 필수 라이브러리 설치
 ```shell
 pip install opencv-python
 pip install numpy as np
@@ -141,7 +140,6 @@ pip install dlib
 <summary>Tensorflow 설치</summary>
 <div markdown="1"> 
 
-* Tensorflow를 위한 필수 라이브러리 설치
 ```shell
 pip install opencv-python
 pip install tensorflow
@@ -155,8 +153,6 @@ pip install numpy
 <details>
 <summary>OCR 설치</summary>
 <div markdown="1"> 
-
-* OCR을 위한 필수 라이브러리 설치
 
 ```shell
 sudo apt install tesseract-ocr 
