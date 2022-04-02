@@ -68,7 +68,6 @@ We want to implement a function that searches for a recipe based on the recognit
 #### 📄 [사용 환경 설정(GitHub Repository)](https://github.com/kookmin-sw/capstone-2022-10#-%EC%82%AC%EC%9A%A9-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95-%EB%B0%8F-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
 
 
-#### 📄 [Frontend 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
 
 
 #### 📄 [Backend 설명(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
@@ -79,6 +78,9 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ### 🛠 기술 스택
 #### 🍴 Frontend
+##### 📄 [사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
+
+
 - Language: `Javascript`/`Typescript`
 - Framework: React
 - Style: `Styled-components`, `Figma`(wireframe)
