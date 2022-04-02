@@ -69,8 +69,8 @@ We want to implement a function that searches for a recipe based on the recognit
 - Framework: React
 - Style: `Styled-components`, `Figma`(wireframe)
 - Others: `Recoil`
-##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
-##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
+##### [📎Frontend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
+##### [📄Frontend 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
 
 
 
@@ -80,8 +80,8 @@ We want to implement a function that searches for a recipe based on the recognit
 - Framework: `Express`
 - Database: `MySQL`, `TypeORM`
 - Test: `Jest`
-##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
-##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
+##### [📎Backend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
+##### [📄Backend 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
 
 
 
@@ -91,8 +91,8 @@ We want to implement a function that searches for a recipe based on the recognit
 - ML: `TensorFlow`
 - Text: `Tessract OCR`
 - Server: `Firebase` or `Django`(추후 결정)
-##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
-##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
+##### [📎Data Modeling Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
+##### [📄Data Modeling 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 
 
 
