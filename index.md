@@ -73,6 +73,7 @@ We want to implement a function that searches for a recipe based on the recognit
 ##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
 
 
+
 #### 🍴 Backend
 
 - Language: `Node.js`/`Typescript`
@@ -81,6 +82,7 @@ We want to implement a function that searches for a recipe based on the recognit
 - Test: `Jest`
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
 ##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
+
 
 
 #### 🍴 Data Modeling
@@ -93,9 +95,11 @@ We want to implement a function that searches for a recipe based on the recognit
 ##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 
 
+
 #### 🍴 Devops
 - Deploy: `AWS`, `Firebase`(추후 결정)
 - Deployment Management: `GitHub Actions`
+
 
 
 #### 🍴 Co-Working
