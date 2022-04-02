@@ -120,13 +120,52 @@ yarn local
 ## 🛠 Data Modeling Server
 
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
+### 필수 라이브러리 설치
 
-### 패키지 설치
+<details>
+<summary>  YOLO 설치</summary>
+<div markdown="1"> 
+
+* YOLO테스트를 위한 필수 라이브러리 설치
+```shell
+pip install opencv-python
+pip install numpy as np
+pip install cmake
+pip install dlib
+```
+
+</div>
+</details>
+
+<details>
+<summary>Tensorflow 설치</summary>
+<div markdown="1"> 
+
+* Tensorflow를 위한 필수 라이브러리 설치
 ```shell
 pip install opencv-python
 pip install tensorflow
 pip install numpy
 ```
+
+</div>
+</details>
+
+
+<details>
+<summary>OCR 설치</summary>
+<div markdown="1"> 
+
+* OCR을 위한 필수 라이브러리 설치
+
+```shell
+sudo apt install tesseract-ocr 
+pip install pytesseract
+```
+
+</div>
+</details>
+
 ### 로컬 환경 실행
 ```shell
 # 추후 업로드 예정
