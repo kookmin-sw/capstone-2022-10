@@ -129,7 +129,7 @@ yarn local
 </details>
 
 <details>
-<summary >🛠 Data Modeling Server</summary>
+<summary >🛠 Data Modeling</summary>
 
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
 ### 필수 라이브러리 설치
