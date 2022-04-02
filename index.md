@@ -66,6 +66,8 @@ We want to implement a function that searches for a recipe based on the recognit
 #### [📍팀 규칙에 대해 알아보기](https://github.com/kookmin-sw/capstone-2022-10/wiki/%ED%8C%80-%EC%95%BD%EC%86%8D)
 
 ## 🔎 <span style="color:#FF9F1C">기술 스택 및 사용법</span>
+#### 📏 시스템 구조도
+![스크린샷, 2022-04-02 20-17-19](https://user-images.githubusercontent.com/85275893/161381061-608effbb-3391-43e9-91d0-8aa673ff528e.png)
 
 <details>
 <summary>🍴 Frontend</summary>
