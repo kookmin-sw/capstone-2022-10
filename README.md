@@ -65,6 +65,8 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 🛠 Frontend
 
+### [📎Frontend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
+
 ### yarn package 설치
 - yarn 설치 후 진행
 - package.json 패키지 설치 
@@ -75,7 +77,7 @@ yarn start
 ```
 ## 🛠 Backend
 
-- [Backend 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
+### [📎Backend Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
 
 ### yarn package 설치
 - yarn 설치 후 진행
@@ -116,6 +118,9 @@ yarn local
 
 
 ## 🛠 Data Modeling Server
+
+### [📎Data Modeling Server Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
+
 ### 패키지 설치
 ```shell
 pip install opencv-python
