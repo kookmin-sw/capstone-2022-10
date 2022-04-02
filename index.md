@@ -11,6 +11,7 @@
 이미지 속 재료 인식을 기반으로 레시피를 검색해주는 기능과 레시피를 추천해주는 기능을 구현하고자 합니다. 또한 이러한 레시피를 공유할 수 있도록 공유 커뮤니티를 구현하게 되었습니다.
 **이 서비스를 통해 1인 가구 및 가정 내에서 사진 촬영 한 번으로 건강한 식문화에 접근할 수 있는 환경을 구현하고자 합니다.**
 
+#### [🔑프로젝트 기능 더 알아보기](https://github.com/kookmin-sw/capstone-2022-10/wiki/%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-%EA%B8%B0%EB%8A%A5)
 
 
 ## 📝 <span style="color:#FF9F1C">Project Abstract</span>
@@ -33,6 +34,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
+#### [📍팀 약속](https://github.com/kookmin-sw/capstone-2022-10/wiki/%ED%8C%80-%EC%95%BD%EC%86%8D)
 
 1. 👩 강지수
 
