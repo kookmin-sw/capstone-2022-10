@@ -62,15 +62,10 @@ We want to implement a function that searches for a recipe based on the recognit
 	- Email: tpfktpgml24@gmail.com
 	- Github: [@Sehee-Lee-01](https://github.com/Sehee-Lee-01)
 
-## 🔎 <span style="color:#FF9F1C">사용 설명 링크 및 사용 기술</span>
-### 🛠 사용 설명 링크
-
-#### 📄 [사용 환경 설정(GitHub Repository)](https://github.com/kookmin-sw/capstone-2022-10#-%EC%82%AC%EC%9A%A9-%ED%99%98%EA%B2%BD-%EC%84%A4%EC%A0%95-%EB%B0%8F-%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0)
-
-### 🛠 기술 스택
+## 🔎 <span style="color:#FF9F1C">기술 스택 및 사용법</span>
 #### 🍴 Frontend
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
-##### [📄디테일(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
+##### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Frontend)
 
 
 - Language: `Javascript`/`Typescript`
@@ -81,7 +76,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 #### 🍴 Backend
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
-#### 📄 [디테일(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
+#### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Backend)
 
 
 - Language: `Node.js`/`Typescript`
@@ -92,7 +87,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 #### 🍴 Data Modeling
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
-#### 📄 [디테일(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
+#### [📄사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 
 - Image: `OpenCV`, `YOLO`
 - ML: `TensorFlow`
