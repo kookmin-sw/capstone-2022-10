@@ -71,10 +71,18 @@ We want to implement a function that searches for a recipe based on the recognit
 - yarn 설치 후 진행
 - package.json 패키지 설치 
 
-### 로컬 환경 실행
+<details>
+<summary>로컬 환경 실행</summary>
+<div markdown="1"> 
+
+* 로컬 환경 실행
+
 ```shell
 yarn start
 ```
+
+</div>
+</details>
 ## 🛠 Backend
 
 ##### [📎Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/backend)
@@ -111,10 +119,18 @@ DB_LOCAL_USERNAME = root # Username
 DB_LOCAL_PASSWORD = 0000 # Password of DB
 DB_LOCAL_DATABASENAME = capstone # DB name
 ```
-### 로컬 환경 실행
+<details>
+<summary>로컬 환경 실행</summary>
+<div markdown="1"> 
+
+* 로컬 환경 실행
+
 ```shell
 yarn local
 ```
+
+</div>
+</details>
 
 
 ## 🛠 Data Modeling Server
