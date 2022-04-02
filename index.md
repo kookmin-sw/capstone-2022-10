@@ -84,5 +84,5 @@ We want to implement a function that searches for a recipe based on the recognit
 - [Data Modeling 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
 	
 ## 📚 <span style="color:#FF9F1C"> 기타</span>
-### [API 명세서(Notion)](https://coal-bee-2c7.notion.site/API-0f1484a8eeb648d3b3b9cbc1fc5542b9)
-### [DB 구조(Notion)](https://coal-bee-2c7.notion.site/DB-295b97c06f034e38a40c1c1876d8b2f3)
+- [API 명세서(Notion)](https://coal-bee-2c7.notion.site/API-0f1484a8eeb648d3b3b9cbc1fc5542b9)
+- [DB 구조(Notion)](https://coal-bee-2c7.notion.site/DB-295b97c06f034e38a40c1c1876d8b2f3)
