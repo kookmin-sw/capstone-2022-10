@@ -74,17 +74,12 @@ We want to implement a function that searches for a recipe based on the recognit
 ```shell
 yarn install
 ```
-
-<details>
-<summary>로컬 환경 실행</summary>
-<div markdown="1"> 
-
+### 로컬 환경 실행
 ```shell
 yarn start
 ```
 
 </details>
-
 
 <details>
 <summary >🛠 Backend</summary>
