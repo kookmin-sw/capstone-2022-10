@@ -165,8 +165,15 @@ pip install pytesseract
 
 </div>
 </details>
+<details>
+<summary>로컬 환경 실행</summary>
+<div markdown="1"> 
 
-### 로컬 환경 실행
+* 로컬 환경 실행
+
 ```shell
 # 추후 업로드 예정
 ```
+
+</div>
+</details>
