@@ -24,9 +24,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 🎥프로젝트 소개 동영상
 
-<video width="100%" height="100%" controls="controls">
-  <source src="/img/팀10-중간발표영상-압축본.mp4" type="video/mp4">
-</video>
+https://user-images.githubusercontent.com/85275893/161413783-7137025c-5081-4e2d-8399-81392d9f2109.mp4
 
 ## 💻 <span style="color:#FF9F1C">소개 자료</span>
 
