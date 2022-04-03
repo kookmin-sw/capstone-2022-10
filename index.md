@@ -25,9 +25,9 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 🎥 <span style="color:#FF9F1C">프로젝트 소개 동영상</span>
 
-<video width="100%" height="100%" controls="controls">
-  <source src="/img/팀10-소개동영상-압축본.mp4" type="video/mp4">
-</video>
+<video src="https://user-images.githubusercontent.com/85275893/161413328-674f7896-56aa-4514-8d2a-eb70468a8146.mp4" data-canonical-src="https://user-images.githubusercontent.com/85275893/161413328-674f7896-56aa-4514-8d2a-eb70468a8146.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;">
+
+  </video>
 
 
 ## 💻 <span style="color:#FF9F1C">소개 자료</span>
