@@ -23,11 +23,12 @@ Being conscious of this problem, this project came to plan a platform that helps
 We want to implement a function that searches for a recipe based on the recognition of ingredients in an image and a function that recommends a recipe. We've also implemented a sharing community to help you share these recipes.
 **Through this service, we want to create an environment where single-person households and other households can access healthy food culture with just one photo shoot.**
 
-## 🎥프로젝트 소개 동영상
+## 🎥 <span style="color:#FF9F1C">프로젝트 소개 동영상</span>
 
 <video width="100%" height="100%" controls="controls">
-  <source src="/img/팀10-소개동영상-압축본.mp4" type="video/mp4">
+  <source src="/img/팀10-소개동영상.mp4" type="video/mp4">
 </video>
+
 
 ## 💻 <span style="color:#FF9F1C">소개 자료</span>
 
