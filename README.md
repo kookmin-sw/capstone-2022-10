@@ -24,14 +24,16 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 🎥프로젝트 소개 동영상
 
-https://user-images.githubusercontent.com/85275893/161413517-c9644d67-7405-41f7-b723-e485cdc01dd6.mp4
+<video width="100%" height="100%" controls="controls">
+  <source src="/img/팀10-중간발표영상-압축본.mp4" type="video/mp4">
+</video>
 
 ## 💻 <span style="color:#FF9F1C">소개 자료</span>
 
 - 📎 [How Cook 소개 페이지](https://kookmin-sw.github.io/capstone-2022-10/)
 - 📎 [How Cook GitHub Wiki⭐](https://github.com/kookmin-sw/capstone-2022-10/wiki)
 - 📎 [How Cook 중간 발표 PDF]()(추후 업로드 예정)
-- 📎 [How Cook 소개 영상](https://drive.google.com/file/d/1XycH4Z82Xn06QCra3Sg6E4PctV6QyFq5/view?usp=sharing)
+- 📎 [How Cook 소개 영상 원본](https://drive.google.com/file/d/1XycH4Z82Xn06QCra3Sg6E4PctV6QyFq5/view?usp=sharing)
 - 📎 [How Cook 서비스]()(추후 배포 예정)
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
