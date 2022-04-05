@@ -168,3 +168,5 @@ pip install pytesseract
 ```
 
 </details>
+
+### [더 알고싶다면?](https://github.com/kookmin-sw/capstone-2022-10/wiki)
