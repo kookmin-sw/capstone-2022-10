@@ -22,10 +22,6 @@ Being conscious of this problem, this project came to plan a platform that helps
 We want to implement a function that searches for a recipe based on the recognition of ingredients in an image and a function that recommends a recipe. We've also implemented a sharing community to help you share these recipes.
 **Through this service, we want to create an environment where single-person households and other households can access healthy food culture with just one photo shoot.**
 
-## 🎥프로젝트 소개 동영상
-
-https://user-images.githubusercontent.com/85275893/161413783-7137025c-5081-4e2d-8399-81392d9f2109.mp4
-
 ## 💻 <span style="color:#FF9F1C">소개 자료</span>
 
 - 📎 [How Cook 소개 페이지](https://kookmin-sw.github.io/capstone-2022-10/)
@@ -33,6 +29,10 @@ https://user-images.githubusercontent.com/85275893/161413783-7137025c-5081-4e2d-
 - 📎 [How Cook 중간 발표 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf?raw=True)
 - 📎 [How Cook 소개 영상 원본](https://drive.google.com/file/d/1XycH4Z82Xn06QCra3Sg6E4PctV6QyFq5/view?usp=sharing)
 - 📎 [How Cook 서비스]()(추후 배포 예정)
+
+## 🎥프로젝트 소개 동영상
+
+https://user-images.githubusercontent.com/85275893/161413783-7137025c-5081-4e2d-8399-81392d9f2109.mp4
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
 
