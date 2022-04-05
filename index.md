@@ -95,4 +95,4 @@ We want to implement a function that searches for a recipe based on the recognit
 ## 📚 <span style="color:#FF9F1C"> 기타</span>
 - [API 명세서(Notion)](https://coal-bee-2c7.notion.site/API-0f1484a8eeb648d3b3b9cbc1fc5542b9)
 - [DB 구조(Notion)](https://coal-bee-2c7.notion.site/DB-295b97c06f034e38a40c1c1876d8b2f3)
-- [WireFrame]()
+- [WireFrame](https://www.figma.com/file/5F6kKwzV0CQON47QLRVMhl/%EC%BA%A1%EC%8A%A4%ED%86%A4-%EB%94%94%EC%9E%90%EC%9D%B8-2022?node-id=0%3A1)
