@@ -56,6 +56,7 @@ pip install numpy
 ```python
 sudo apt install tesseract-ocr 
 sudo apt-get install tesseract-ocr-kor
+pip install opencv-python
 pip install pytesseract
 ```
 
@@ -382,17 +383,3 @@ for i in recipe:
 
 </div>
 </details>
-
-
-
-
-어떻게 시작하는지 
-환경설정
-파일구조 
-코랩에서 
-
-
-
-
-
-
