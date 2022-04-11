@@ -55,7 +55,7 @@ pip install numpy
 
 ```python
 sudo apt install tesseract-ocr 
-
+sudo apt-get install tesseract-ocr-kor
 pip install pytesseract
 ```
 
