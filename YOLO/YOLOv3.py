@@ -9,17 +9,14 @@ height = 0
 show_ratio = 1.0
 
 path = "YOLO/"
-file_name = "YOLO/images/1.png"
+file_name = path + "images/1.jpg" ## 또는 path + "images/2.jpeg" ##  
 Weights = path + 'weights/custom-train-yolo_12000.weights'
 test_cfg = path + "cfg/custom-test-yolo.cfg"
-#train_cfg = "/content/drive/MyDrive/Kobot/YOLO/darknet/cfg/yolov3.cfg"
-#net = cv2.dnn.readNet("cfg", " weight")
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
 
 
 classes = []
 anw = []
-#with open("$path/classes.nemes" , "r") as f:
 with open(path + "classes.txt" , "r") as f:
 	classes = [line.strip() for line in f.readlines()]
 print(classes)
@@ -31,7 +28,6 @@ output_layers = [layer_names[i[0] -1] for i in net.getUnconnectedOutLayers()]
 # print(net.getUnconnectedOutLayers())
 print(output_layers)
 
-#start_time = time.time()
 img = cv2.imread(file_name)
 
 h,w = img.shape[:2]
@@ -98,4 +94,3 @@ for i in range(len(boxes)):
 cv2.imshow("YOLOv3", img )
 cv2.waitKey()
 cv2.destroyAllWindows()
-#cv2.imshow("Custom Yolo", file_name, img)
