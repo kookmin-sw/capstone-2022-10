@@ -1,4 +1,3 @@
-##
 import cv2
 import numpy as np
 import tensorflow as tf
@@ -9,7 +8,7 @@ width = 800
 height = 0
 show_ratio = 1.0
 
-file_name = "Keras/test_img/1.png" #이미지 경로
+file_name = "Keras/test_img/test.jpg" #이미지 경로
 classes_name ="Keras/classes.txt" # classes 이름이 담긴 파일
 weight_name = "Keras/weights/capstone_custom.h5" # .h5파일
 classes = []

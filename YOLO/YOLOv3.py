@@ -9,29 +9,25 @@ height = 0
 show_ratio = 1.0
 
 path = "YOLO/"
-file_name = "YOLO/images/1.png"
-Weights = path + 'weights/custom-train-yolo_12000.weights'
+file_name = path + "images/test.jpg"
+Weights = path + 'weights/custom-train-yolo_final.weights'
 test_cfg = path + "cfg/custom-test-yolo.cfg"
-#train_cfg = "/content/drive/MyDrive/Kobot/YOLO/darknet/cfg/yolov3.cfg"
-#net = cv2.dnn.readNet("cfg", " weight")
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
 
 
 classes = []
+class_count = 50
 anw = []
-#with open("$path/classes.nemes" , "r") as f:
 with open(path + "classes.txt" , "r") as f:
 	classes = [line.strip() for line in f.readlines()]
 print(classes)
 color_lists = np.random.uniform(0, 255, size= (len(classes), 3))
 
 layer_names = net.getLayerNames()
-# print(layer_names)
-output_layers = [layer_names[i[0] -1] for i in net.getUnconnectedOutLayers()]
-# print(net.getUnconnectedOutLayers())
+#print(layer_names)
+output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
 print(output_layers)
 
-#start_time = time.time()
 img = cv2.imread(file_name)
 
 h,w = img.shape[:2]
@@ -88,7 +84,7 @@ for i in range(len(boxes)):
     #print (type(con))
 		color = colors[i]
 		#print(i, label, color, x, y, w, h)
-		cv2.rectangle(img, (x, y), (x+w, y+h), color, 2)
+		cv2.rectangle(img, (x, y), (x+w, y+h), color, 3)
 		cv2.putText(img, con + "%", (x, y +80), font, 3, color, 3)
 		cv2.putText(img, label, (x, y + 30), font, 3, color, 3)
   		
@@ -98,4 +94,3 @@ for i in range(len(boxes)):
 cv2.imshow("YOLOv3", img )
 cv2.waitKey()
 cv2.destroyAllWindows()
-#cv2.imshow("Custom Yolo", file_name, img)
