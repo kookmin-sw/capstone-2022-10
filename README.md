@@ -1,7 +1,6 @@
 # capstone-2022-10
 capstone-2022-45 created by GitHub Classroom. 
 
-https://drive.google.com/file/d/1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV/view?usp=sharing
 
 ML
 - **YOLOv3**
@@ -28,7 +27,9 @@ ML
 pip install opencv-python
 pip install numpy as np
 pip install cmake
-pip install dlib
+pip install dlib  
+https://drive.google.com/file/d/1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV/view?usp=sharing  
+	<해당 다운로드 파일을 YOLO/weights/ 경로에 넣어주세요>
 ```
 
 </div>
