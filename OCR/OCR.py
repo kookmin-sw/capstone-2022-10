@@ -61,9 +61,12 @@ for i in result :
     recipe.append(i)
 print(recipe)
 
-
+out = []
 for i in recipe:
   for j in classes:
     if j in i:
       print("인식된 재료는 : ", j)
+      out.append(j)
+      
+print(j)
 

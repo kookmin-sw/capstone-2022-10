@@ -1,7 +1,5 @@
 import numpy as np
 import cv2
-import dlib
-
 
 min_confidence = 0.5
 width = 800
@@ -15,25 +13,25 @@ test_cfg = path + "cfg/custom-test-yolo.cfg"
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
 
 
-classes = []
+classes = ["문어","새송이버섯","블루베리","방울토마토","무", "배", "콩나물"
+           ,"꽃게","양배추", "양파", "새우", "시금치", "깻잎", "애호박", "밥", "옥수수"
+           ,"마늘", "바지락", "감자", "수박", "브로콜리", "오이", "멜론", "파", "오징어"
+           ,"당근", "복숭아", "상추","계란", "파프리카", "사과", "고추", "돼지고기", "참외"
+           ,"멸치", "고등어", "조기", "배추", "감", "딸기", "가지", "소고기", "고구마"
+           ,"버터", "귤", "닭고기", "두부" ,"양송이버섯", "키위", "갈치"]
+
 class_count = 50
 anw = []
-with open(path + "classes.txt" , "r") as f:
-	classes = [line.strip() for line in f.readlines()]
-print(classes)
-color_lists = np.random.uniform(0, 255, size= (len(classes), 3))
 
+ 
+color_lists = np.random.uniform(0, 255, size= (len(classes), 3))
 layer_names = net.getLayerNames()
-#print(layer_names)
 output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
-print(output_layers)
 
 img = cv2.imread(file_name)
 
 h,w = img.shape[:2]
 height = int(h * width / w)
-print(height, width)
-
 blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False
 							 )
 
@@ -70,27 +68,4 @@ for out in outs:
 
 indexes = cv2.dnn.NMSBoxes(boxes, confidences, min_confidence, 0.4)
 
-
-
-font = cv2.FONT_HERSHEY_PLAIN
-for i in range(len(boxes)):
-	if i in indexes:
-		x, y, w, h = boxes[i]
-		label = str( names[i] )
-		anw = (str(names[i]))
-		con = (confidences[i] * 100)
-		con = "{:.1f}".format(con)
-	
-    #print (type(con))
-		color = colors[i]
-		#print(i, label, color, x, y, w, h)
-		cv2.rectangle(img, (x, y), (x+w, y+h), color, 3)
-		cv2.putText(img, con + "%", (x, y +80), font, 3, color, 3)
-		cv2.putText(img, label, (x, y + 30), font, 3, color, 3)
-  		
-
-
-		
-cv2.imshow("YOLOv3", img )
-cv2.waitKey()
-cv2.destroyAllWindows()
+print(set(names))
