@@ -68,10 +68,6 @@ pip install pytesseract
 
 
 <details>
-<summary> 학습모델 사용 </summary>>
-<div markdown="1"> 
-
-<details>
 <summary> YOLO </summary>>
 <div markdown="1"> 
 
