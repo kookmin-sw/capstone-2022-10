@@ -76,9 +76,6 @@ pip install pytesseract
 ```python
 import cv2
 import numpy as np
-import matplotlib.pyplot as plt
-import dlib
-import time
 
 min_confidence = 0.5
 width = 800
@@ -193,13 +190,6 @@ print("===A frame took {:.3f} sec".format(process_time))
 
 ##### YOLO에서 학습한 Weight파일을 Google에서 제공하는 Tensorflow Keras 모델로 재학습하여 사용
 
-##### 필요 라이브러리 설치
-
-```python
-pip install opencv-python
-pip install tensorflow
-pip install numpy
-```
 ##### 다운로드 파일 설명
 
 * classes.txt : 재료 리스트가 들어있는 txt파일 
