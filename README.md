@@ -1,5 +1,6 @@
 # capstone-2022-10
-capstone-2022-45 created by GitHub Classroom
+capstone-2022-45 created by GitHub Classroom. 
+
 
 ML
 - **YOLOv3**
@@ -24,9 +25,9 @@ ML
 * YOLO테스트를 위한 필수 라이브러리 설치
 ```python
 pip install opencv-python
-pip install numpy as np
-pip install cmake
-pip install dlib
+pip install numpy as np 
+https://drive.google.com/file/d/1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV/view?usp=sharing  
+	<해당 다운로드 파일을 YOLO/weights/ 경로에 넣어주세요>
 ```
 
 </div>

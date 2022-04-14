@@ -1,4 +1,6 @@
 import pyrebase
+import requests
+
 
 firebaseConfig = {
    'apiKey': "AIzaSyCwUYL-yvBqnDatdPdz0_qkRWtO5AFtvdU",
@@ -23,4 +25,5 @@ storage = firebase.storage()
 #storage.child(cloud_file).put(file)
 
 url = storage.child("4.jpeg").get_url(None) ## 특정 부분 가져오기
-print(url)
+# print(url)
+image_nparray = np.asarray(bytearray(requests.get(url).content), dtype=np.uint8)
