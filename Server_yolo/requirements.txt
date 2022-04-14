@@ -1,0 +1,16 @@
+click==7.1.2
+fastapi==0.63.0
+gunicorn==20.0.4
+h11==0.12.0
+numpy==1.20.1
+Pillow==8.1.0
+pydantic==1.7.3
+pytesseract==0.3.7
+python-multipart==0.0.5
+six==1.15.0
+starlette==0.13.6
+unicorn==1.0.2
+uvicorn==0.13.3
+opencv-python-headless
+uvloop
+httptools
