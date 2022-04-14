@@ -14,21 +14,13 @@ from pydantic import BaseModel
 Weights = 'custom-train-yolo_final.weights'
 test_cfg = 'custom-test-yolo.cfg'
 ##### 위 두 파일을 어디서 받아오지...
-
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
 layer_names = net.getLayerNames()
 output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
 
 
-confidences = []
-names = []
-boxes = []
 
 
-min_confidence = 0.5
-width = 800
-height = 0
-show_ratio = 1.0
 classes = ["문어","새송이버섯","블루베리","방울토마토","무", "배", "콩나물"
            ,"꽃게","양배추", "양파", "새우", "시금치", "깻잎", "애호박", "밥", "옥수수"
            ,"마늘", "바지락", "감자", "수박", "브로콜리", "오이", "멜론", "파", "오징어"
@@ -41,6 +33,13 @@ class_count = 50
 
 
 def read_img(img):
+    min_confidence = 0.5
+    width = 800
+    height = 0
+    show_ratio = 1.0
+    confidences = []
+    names = []
+    boxes = []
     h,w = img.shape[:2]
     height = int(h * width / w)
     blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False
@@ -70,7 +69,8 @@ def read_img(img):
                 names.append(classes[class_id])
 
     indexes = cv2.dnn.NMSBoxes(boxes, confidences, min_confidence, 0.4)
-    return names
+    
+    return set(names)
 
 app = FastAPI()
 
