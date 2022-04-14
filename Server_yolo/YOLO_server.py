@@ -11,8 +11,8 @@ from pydantic import BaseModel
 
 
 
-Weights = path + 'weights/custom-train-yolo_final.weights'
-test_cfg = path + "cfg/custom-test-yolo.cfg"
+Weights = 'custom-train-yolo_final.weights'
+test_cfg = 'custom-test-yolo.cfg'
 ##### 위 두 파일을 어디서 받아오지...
 
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
