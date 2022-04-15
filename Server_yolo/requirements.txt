@@ -11,6 +11,7 @@ six==1.15.0
 starlette==0.13.6
 unicorn==1.0.2
 uvicorn==0.13.3
+gdown==4.4.0
 opencv-python-headless
 uvloop
 httptools

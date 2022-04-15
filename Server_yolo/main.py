@@ -1,16 +1,18 @@
-import numpy as np
-import sys, os
+
 from fastapi import FastAPI, UploadFile, File
 from starlette.requests import Request
+from pydantic import BaseModel
+import numpy as np
+import gdown
+import sys, os
 import io
 import cv2
 import pytesseract
 import re
-from pydantic import BaseModel
 
 
-
-
+url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
+gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
 Weights = 'custom-train-yolo_final.weights'
 test_cfg = 'custom-test-yolo.cfg'
 ##### 위 두 파일을 어디서 받아오지...
