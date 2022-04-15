@@ -2,8 +2,8 @@
 capstone-2022-45 created by GitHub Classroom. 
 
 - **YOLOv3**
-###### 사용한 **YOLO V3**모델은 **You Only Look Once**의 약자로써, 객체 탐지(Object detection)분야에서 많이 알려져 있으며 이미지를 한 번 보는 것으로 물체의 종류와 위치를 추측한다.
-###### **YOLO v3**는 이전v2버전을 더욱 개량하여 정확도를 향상시켰다.
+##### 사용한 **YOLO V3**모델은 **You Only Look Once**의 약자로써, 객체 탐지(Object detection)분야에서 많이 알려져 있으며 이미지를 한 번 보는 것으로 물체의 종류와 위치를 추측한다.
+##### **YOLO v3**는 이전v2버전을 더욱 개량하여 정확도를 향상시켰다.
 
 - **OCR**
 ##### 영수증 인식을 광학문자인식 OCR 이용
