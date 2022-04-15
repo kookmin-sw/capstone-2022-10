@@ -14,10 +14,12 @@ capstone-2022-45 created by GitHub Classroom.
 <div markdown="1"> 
 	
 ##### - Google Colab  
-(코랩에서 진행하는 이유)
+(코랩에서 진행하는 이유)  
+	
     - ###### YOLO를 학습시키기 위해서는 Darknet을 사용해야하는데 설치 조건이 까다롭기 때문에 공통적인 환경을 위하여 
     - ###### Linux 환경
-    - ###### GPU연산 가능  
+    - ###### GPU연산 가능    
+	
 ##### #주의점 : Colab 무료버전은 최대 런타임 시간은 12시간이므로 구글 드라이브를 통한 데이터 백업 필요
 	
 </div>
