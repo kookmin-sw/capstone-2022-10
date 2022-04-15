@@ -11,11 +11,13 @@ import pytesseract
 import re
 
 
-url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
-gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
+if not os.path.exists('custom-train-yolo_final.weights'):
+    url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
+    gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
+    
+
 Weights = 'custom-train-yolo_final.weights'
 test_cfg = 'custom-test-yolo.cfg'
-##### 위 두 파일을 어디서 받아오지...
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
 layer_names = net.getLayerNames()
 output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
