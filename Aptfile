@@ -1,0 +1,8 @@
+tesseract-ocr
+tesseract-ocr-eng
+tesseract-ocr-kor
+libtesseract-dev
+libatlas-base-dev
+libarchive-dev
+libarchive-tools
+libarchive13

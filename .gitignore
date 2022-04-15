@@ -1,1 +1,4 @@
+__pycache__
+env
+get-pip.py
 custom-train-yolo_final.weights
