@@ -1,32 +1,27 @@
 # capstone-2022-10
 capstone-2022-45 created by GitHub Classroom. 
 
-- **YOLOv3**
-##### 사용한 **YOLO V3**모델은 **You Only Look Once**의 약자로써, 객체 탐지(Object detection)분야에서 많이 알려져 있으며 이미지를 한 번 보는 것으로 물체의 종류와 위치를 추측한다.
-##### **YOLO v3**는 이전v2버전을 더욱 개량하여 정확도를 향상시켰다.
+# ML
 
-- **OCR**
-##### 영수증 인식을 광학문자인식 OCR 이용
-* 구글에서 제공해주는 광학문자익식 **tesseract-ocr**을 이용
 
-<details>
-<summary> 학습환경 </summary>
-<div markdown="1"> 
-	
-##### - Google Colab  
-(코랩에서 진행하는 이유)  
-	
-    - ###### YOLO를 학습시키기 위해서는 Darknet을 사용해야하는데 설치 조건이 까다롭기 때문에 공통적인 환경을 위하여 
-    - ###### Linux 환경
-    - ###### GPU연산 가능    
-	
+
+## YOLOv3
+
+###### 사용한 **YOLO V3**모델은 **You Only Look Once**의 약자로써, 객체 탐지(Object detection)분야에서 많이 알려져 있으며 이미지를 한 번 보는 것으로 물체의 종류와 위치를 추측한다.
+###### **YOLO v3**는 이전v2버전을 더욱 개량하여 정확도를 향상시켰다.
+
+
+## 학습환경
+### Google Colab 
+(코랩에서 진행하는 이유)
+
+- ###### YOLO를 학습시키기 위해서는 Darknet을 사용해야하는데 설치 조건이 까다롭기 때문에 공통적인 환경을 위하여 
+- ###### Linux 환경
+- ###### GPU연산 가능  
 ##### #주의점 : Colab 무료버전은 최대 런타임 시간은 12시간이므로 구글 드라이브를 통한 데이터 백업 필요
-	
-</div>
-</details>
-	
-	
-### 필수 라이브러리 설치
+
+## 필수 라이브러리 설치
+
 
 <details>
 <summary>  YOLO </summary>
