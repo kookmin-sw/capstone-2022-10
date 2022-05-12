@@ -69,7 +69,7 @@ pip install pytesseract
 </div>
 </details>
 
-### How to start
+## How to start
 
 
 <details>
