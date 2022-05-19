@@ -76,21 +76,21 @@ pip install pytesseract
 <summary> YOLO </summary>>
 <div markdown="1"> 
 	
-...
-├── cfg/
-│   └──custom-test-yolo.cfg
-├── data/
-│  ├── labels/
-│  ├── dog.jpg
-│  └── fruit10.jpg
-├── images/
-│   └── test.jpg	
-├── weights/
-│   └── chart_custom-train-yolo.png
-├── YOLOv3.py
-├── classes.txt
-├── requirements.txt
-...
+...  
+├── cfg/  
+│   └──custom-test-yolo.cfg   
+├── data/  
+│  ├── labels/  
+│  ├── dog.jpg  
+│  └── fruit10.jpg  
+├── images/  
+│   └── test.jpg  	
+├── weights/  
+│   └── chart_custom-train-yolo.png  
+├── YOLOv3.py  
+├── classes.txt  
+├── requirements.txt  
+...   
 
 
 * Yolo모델을 사용하기 위한 코드
