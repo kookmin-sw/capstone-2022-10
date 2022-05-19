@@ -84,7 +84,7 @@ pip install pytesseract
 |   |── dog.jpg  
 |  └── fruit10.jpg  
 |── images/  
-|   └── test.jpg     	
+|   └── test.jpg  
 |── weights/    
 |   └── chart_custom-train-yolo.png  
 |── YOLOv3.py  
