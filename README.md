@@ -78,10 +78,10 @@ pip install pytesseract
 	
 ...  
 |── cfg/  
-|   └──custom-test-yolo.cfg   
+|   └── ⌙custom-test-yolo.cfg   
 |── data/  
-|  ├── labels/  
-|  ├── dog.jpg  
+|  |── labels/  
+|  |── dog.jpg  
 |  └── fruit10.jpg  
 |── images/  
 |   └── test.jpg  	
