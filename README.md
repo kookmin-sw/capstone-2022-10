@@ -78,14 +78,14 @@ pip install pytesseract
 	
 ...  
 |── cfg/  
-|   └── ⌙custom-test-yolo.cfg   
+|   └──custom-test-yolo.cfg   
 |── data/  
-|  |── labels/  
-|  |── dog.jpg  
+|   |── labels/  
+|   |── dog.jpg  
 |  └── fruit10.jpg  
 |── images/  
-|   └── test.jpg  	
-|── weights/  
+|   └── test.jpg     	
+|── weights/    
 |   └── chart_custom-train-yolo.png  
 |── YOLOv3.py  
 |── classes.txt  
