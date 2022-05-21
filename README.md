@@ -32,8 +32,6 @@ capstone-2022-45 created by GitHub Classroom.
 - ###### GPU연산 가능  
 ##### #주의점 : Colab 무료버전은 최대 런타임 시간은 12시간이므로 구글 드라이브를 통한 데이터 백업 필요
 
-## 필수 라이브러리 설치
-
 ## 파일구조
 YOLO
 
@@ -65,6 +63,8 @@ OCR
 
 ```
 
+
+## 필수 라이브러리 설치
 
 <details>
 <summary>  YOLO </summary>
