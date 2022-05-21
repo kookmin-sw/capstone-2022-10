@@ -52,7 +52,7 @@ def four_point_transform(image, pts): ##4개의 꼭지점을 기준으로 투영
 
 ####### 이미지 읽기
 
-img = cv2.imread('test_img/4.jpeg')
+img = cv2.imread('test_img/test.jpeg')
 ratio = 500.0/img.shape[0]
 dim = (int(img.shape[1] * ratio), 500)
 img = cv2.resize(img, dim, interpolation= cv2.INTER_AREA)
