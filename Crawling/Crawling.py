@@ -8,7 +8,7 @@ from selenium.webdriver.common.by import By
 keyword = "eggplant"
 count = 1
 
-driver = webdriver.Chrome("/Users/dak_kiwon/Jun/Git_dir/KMU-2022/Capstone/Crawling/chromedriver")
+driver = webdriver.Chrome("chromedriver")
 driver.get("https://www.google.co.kr/imghp?hl=ko&ogbl")
 elem = driver.find_element(by = By.NAME, value = "q")
 elem.send_keys(keyword)
