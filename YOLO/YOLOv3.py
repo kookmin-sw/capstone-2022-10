@@ -1,15 +1,20 @@
 import numpy as np
 import cv2
+import gdown
+import os
+
+if not os.path.exists('custom-train-yolo_final.weights'):
+    url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
+    gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
 
 min_confidence = 0.5
 width = 800
 height = 0
 show_ratio = 1.0
 
-path = "YOLO/"
-file_name = path + "images/test.jpg"
-Weights = path + 'weights/custom-train-yolo_final.weights'
-test_cfg = path + "cfg/custom-test-yolo.cfg"
+Weights = 'custom-train-yolo_final.weights'
+file_name = "images/test.jpg"
+test_cfg = "cfg/custom-test-yolo.cfg"
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
 
 
