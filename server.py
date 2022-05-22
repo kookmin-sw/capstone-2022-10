@@ -10,11 +10,7 @@ import cv2
 import pytesseract
 import re
 
-
-
-def readReceiptImg(img):
-    
-    def order_points(pts):  ## 이미지에서 4개의 꼭지점 찾기
+def order_points(pts):  ## 이미지에서 4개의 꼭지점 찾기
         rect = np.zeros((4, 2), dtype="float32")
 
         s = pts.sum(axis=1)
@@ -27,73 +23,33 @@ def readReceiptImg(img):
 
         return rect
         
-    def four_point_transform(image, pts): ## 찾은 꼭지점을 기준으로 변환
-        rect = order_points(pts)
-        (tl, tr, br, bl) = rect
+def four_point_transform(image, pts): ## 찾은 꼭지점을 기준으로 변환
+    rect = order_points(pts)
+    (tl, tr, br, bl) = rect
 
-        widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
-        widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
-        maxWidth = max(int(widthA), int(widthB))
+    widthA = np.sqrt(((br[0] - bl[0]) ** 2) + ((br[1] - bl[1]) ** 2))
+    widthB = np.sqrt(((tr[0] - tl[0]) ** 2) + ((tr[1] - tl[1]) ** 2))
+    maxWidth = max(int(widthA), int(widthB))
 
-        heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
-        heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
-        maxHeight = max(int(heightA), int(heightB))
+    heightA = np.sqrt(((tr[0] - br[0]) ** 2) + ((tr[1] - br[1]) ** 2))
+    heightB = np.sqrt(((tl[0] - bl[0]) ** 2) + ((tl[1] - bl[1]) ** 2))
+    maxHeight = max(int(heightA), int(heightB))
 
-        dst = np.array([
-            [0, 0],
-            [maxWidth - 1, 0],
-            [maxWidth - 1, maxHeight - 1],
-            [0, maxHeight - 1]], dtype="float32")
+    dst = np.array([
+        [0, 0],
+        [maxWidth - 1, 0],
+        [maxWidth - 1, maxHeight - 1],
+        [0, maxHeight - 1]], dtype="float32")
 
-        M = cv2.getPerspectiveTransform(rect, dst)
-        warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))
+    M = cv2.getPerspectiveTransform(rect, dst)
+    warped = cv2.warpPerspective(image, M, (maxWidth, maxHeight))
 
-        return warped
-    
-    
-    ratio = 600.0/img.shape[0]
-    dim = (int(img.shape[1] * ratio), 600)
-    img = cv2.resize(img, dim, interpolation= cv2.INTER_AREA)
-    og_img = img.copy()
-
-    GRAY = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    GRAY = cv2.GaussianBlur(GRAY, (3,3), 0)
-    edged = cv2.Canny(GRAY, 70,200)
+    return warped
 
 
-    cnts, _ = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
-    cnts = sorted(cnts, key =cv2.contourArea, reverse= True)[:5]
-    ## 반환받은 cnt중 면적인 큰 순서대로 5번까지 반환 
-    check = False
-    for c in cnts:
-        ## 순차적으로 탐색
-        peri = cv2.arcLength(c, True)
-        ## 컨투어의 길이를 반환
-        approx = cv2.approxPolyDP(c, 0.02 * peri, True)
-        ## 길이의 오차 2퍼센트로 도형을 근사화
-        if len(approx) == 4 and cv2.contourArea(c)>=20000:
-            ## 근사화한 도형의 꼭지점이 4개라면 그것이 문서의 외곽
-            screenCnt = approx
-            check = True
-            break
-    if check == False:
-        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-        # cv2.imshow("IMG", img)
-        # cv2.waitKey(0)
-        # cv2.destroyAllWindows()
-    else :
-        cv2.drawContours(img, [screenCnt], -1, (0,255,0), 2)
-        warped = four_point_transform(og_img, screenCnt.reshape(4, 2))
-        copy = warped.copy()
-        img = cv2.cvtColor(copy, cv2.COLOR_BGR2GRAY)
-        ##
-    GRAY  = img.copy()
-    h,w = GRAY.shape
-    GRAY = cv2.resize(GRAY, (2*w, 2*h), interpolation= INTER_LINEAR)
-    GRAY = cv2.fastNlMeansDenoising(GRAY,h=10, searchWindowSize=21,templateWindowSize=7)
-
+def readReceiptImg(img):
     pytesseract.pytesseract.tesseract_cmd = '/app/.apt/usr/bin/tesseract'
-    results = pytesseract.image_to_string(GRAY,lang="kor")
+    results = pytesseract.image_to_string(img,lang="kor")
 
     classes = ["가지","감자", "깻잎", "버터", "당근",
             "대파","마늘", "무","배추","브로콜리",
@@ -105,11 +61,8 @@ def readReceiptImg(img):
             "키위","방울토마토", "소고기","돼지고기",
             "닭고기", "달걀", "조기", "갈치","고등어",
             "문어", "꽃게", "새우", "오징어","바지락",
-            "멸치", "두부", "옥수수","밥"]
-
-        
+            "멸치", "두부", "옥수수","밥"]   
     string = results
-
     list = []
     for i in string :
         if i.isalpha() :
@@ -217,12 +170,51 @@ def prediction(requset: Request, file: bytes = File(...)):
         file_byte = np.asarray(bytearray(image_stream.read()), dtype = np.uint8)
         img = cv2.imdecode(file_byte, cv2.IMREAD_COLOR)
         # img = cv2.imread("./ocr.jpeg")
+        ratio = 600.0/img.shape[0]
+        dim = (int(img.shape[1] * ratio), 600)
+        img = cv2.resize(img, dim, interpolation= cv2.INTER_AREA)
+        og_img = img.copy()
+
+        GRAY = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+        GRAY = cv2.GaussianBlur(GRAY, (3,3), 0)
+        edged = cv2.Canny(GRAY, 70,200)
+
+
+        cnts, _ = cv2.findContours(edged.copy(), cv2.RETR_LIST, cv2.CHAIN_APPROX_SIMPLE)
+        cnts = sorted(cnts, key =cv2.contourArea, reverse= True)[:5]
+        ## 반환받은 cnt중 면적인 큰 순서대로 5번까지 반환 
+        check = False
+        for c in cnts:
+            ## 순차적으로 탐색
+            peri = cv2.arcLength(c, True)
+            ## 컨투어의 길이를 반환
+            approx = cv2.approxPolyDP(c, 0.02 * peri, True)
+            ## 길이의 오차 2퍼센트로 도형을 근사화
+            if len(approx) == 4 and cv2.contourArea(c)>=20000:
+                ## 근사화한 도형의 꼭지점이 4개라면 그것이 문서의 외곽
+                screenCnt = approx
+                check = True
+                break
+        if check == False:
+            img = cv2.cvtColor(og_img, cv2.COLOR_BGR2GRAY)
+            # cv2.imshow("IMG", img)
+            # cv2.waitKey(0)
+            # cv2.destroyAllWindows()
+        else :
+            warped = four_point_transform(og_img, screenCnt.reshape(4, 2))
+            copy = warped.copy()
+            img = cv2.cvtColor(copy, cv2.COLOR_BGR2GRAY)
+            ##
+        GRAY  = img.copy()
+        h,w = GRAY.shape
+        GRAY = cv2.resize(GRAY, (2*w, 2*h), interpolation= cv2.INTER_LINEAR)
+        GRAY = cv2.fastNlMeansDenoising(GRAY,h=10, searchWindowSize=21,templateWindowSize=7)
         ##
         
-        label = readReceiptImg(img)
+        label = readReceiptImg(GRAY)
         return label
     else :
-        return "No post request found"
+        return "No post request found"  
 
 
 @app.post("/ingredint-image/")
