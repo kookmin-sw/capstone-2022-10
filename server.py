@@ -219,7 +219,7 @@ def prediction(requset: Request, file: bytes = File(...)):
         # img = cv2.imread("./ocr.jpeg")
         ##
         
-        label = readReceiptImg(frame)
+        label = readReceiptImg(img)
         return label
     else :
         return "No post request found"
