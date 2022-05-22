@@ -108,43 +108,47 @@ pip install pytesseract
 
 * Yolo모델을 사용하기 위한 코드
 ```python
-import cv2
-import numpy as np
+if not os.path.exists('custom-train-yolo_final.weights'):
+    url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
+    gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
+    
+##### 학습파일 다운로드 만약 이미 파일이 있다면 무시한다.
+```
 
+```python
 min_confidence = 0.5
 width = 800
 height = 0
 show_ratio = 1.0
-path = ""  ##자신의 기본 경로
-file_name = "" ## 모델 이미지 경로
-Weights = path + '재료.W/' + "custom-train-yolo_12000.weights" ##욜로 학습 모델이 있는 경로
-test_cfg = path +"cfg/custom-train-yolo.cfg" ## cfg파일이 있는경로  
+
+Weights = 'custom-train-yolo_final.weights'
+## 학습파일
+file_name = "images/test.jpg"
+## 테스트 이미지 
+test_cfg = "cfg/custom-test-yolo.cfg"
+## YOLO config파일
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
 
+classes = ["문어","새송이버섯","블루베리","방울토마토","무", "배", "콩나물"
+           ,"꽃게","양배추", "양파", "새우", "시금치", "깻잎", "애호박", "밥", "옥수수"
+           ,"마늘", "바지락", "감자", "수박", "브로콜리", "오이", "멜론", "파", "오징어"
+           ,"당근", "복숭아", "상추","계란", "파프리카", "사과", "고추", "돼지고기", "참외"
+           ,"멸치", "고등어", "조기", "배추", "감", "딸기", "가지", "소고기", "고구마"
+           ,"버터", "귤", "닭고기", "두부" ,"양송이버섯", "키위", "갈치"]
+
+class_count = 50
 ```
 #### classes.txt파일에 있는 classes 가져옴
-```python
-classes = []
-anw = []
-#with open("$path/classes.nemes" , "r") as f:
-with open(path + "재료/classes.names" , "r") as f:
-	classes = [line.strip() for line in f.readlines()]
-print(classes)
-color_lists = np.random.uniform(0, 255, size= (len(classes), 3))
-
-layer_names = net.getLayerNames()
-# print(layer_names)
-output_layers = [layer_names[i[0] -1] for i in net.getUnconnectedOutLayers()]
-# print(net.getUnconnectedOutLayers())
-```
 
 ``` python
+color_lists = np.random.uniform(0, 255, size= (len(classes), 3))
+layer_names = net.getLayerNames()
+output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
+
 img = cv2.imread(file_name)
 
 h,w = img.shape[:2]
 height = int(h * width / w)
-print(height, width)
-
 blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False
 							 )
 
@@ -156,9 +160,7 @@ names = []
 boxes = []
 colors = []
 
-```
 
-```python
 for out in outs:
 	for detection in out:
 		scores = detection[5:]
@@ -182,34 +184,8 @@ for out in outs:
 			colors.append(color_lists[class_id])
 
 indexes = cv2.dnn.NMSBoxes(boxes, confidences, min_confidence, 0.4)
-
-```
-#### Detection한 이미지에 텍스트를 입력하는 코드 
-```python
-font = cv2.FONT_HERSHEY_PLAIN
-for i in range(len(boxes)):
-	if i in indexes:
-		x, y, w, h = boxes[i]
-		label = str( names[i] )
-		anw = (str(names[i]))
-		con = (confidences[i] * 100)
-		con = "{:.1f}".format(con)
-	
-    #print (type(con))
-		color = colors[i]
-		#print(i, label, color, x, y, w, h)
-		cv2.rectangle(img, (x, y), (x+w, y+h), color, 2)
-		cv2.putText(img, con + "%", (x, y +80), font, 3, color, 3)
-		cv2.putText(img, label, (x, y + 30), font, 3, color, 3)
-```
-#### 결과이미지를 보여주는 코드
-```python
-plt.imshow(cv2.cvtColor(img, cv2.COLOR_BGR2RGB))
-#cv2.imshow("Custom Yolo", file_name, img)
-plt.show()
-end_time = time.time()
-process_time = end_time - start_time
-print("===A frame took {:.3f} sec".format(process_time))
+## 중복된 박스 제거
+print(set(names))
 ```
 
 </div>
@@ -235,6 +211,7 @@ OpenCV를 이용하여 왜곡 이미지를 원근변환 이후 pytesseract를 �
 
 
 ```python
+from cv2 import INTER_AREA, INTER_LINEAR
 import pytesseract
 import numpy as np
 import cv2
@@ -289,9 +266,9 @@ def four_point_transform(image, pts): ##4개의 꼭지점을 기준으로 투영
 
 ####### 이미지 읽기
 
-img = cv2.imread('test_img/test.jpeg')
-ratio = 500.0/img.shape[0]
-dim = (int(img.shape[1] * ratio), 500)
+img = cv2.imread('test_img/test2.jpg')
+ratio = 600.0/img.shape[0]
+dim = (int(img.shape[1] * ratio), 600)
 img = cv2.resize(img, dim, interpolation= cv2.INTER_AREA)
 og_img = img.copy()
 
@@ -310,13 +287,13 @@ for c in cnts:
     ## 컨투어의 길이를 반환
     approx = cv2.approxPolyDP(c, 0.02 * peri, True)
     ## 길이의 오차 2퍼센트로 도형을 근사화
-    if len(approx) == 4:
+    if len(approx) == 4 and cv2.contourArea(c)>=20000:
         ## 근사화한 도형의 꼭지점이 4개라면 그것이 문서의 외곽
         screenCnt = approx
         check = True
         break
 if check == False:
-      img = img
+      img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # cv2.imshow("IMG", img)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
@@ -331,11 +308,16 @@ else :
 # cv2.imshow("warped", copy)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
+GRAY  = img.copy()
+h,w = GRAY.shape
+GRAY = cv2.resize(GRAY, (2*w, 2*h), interpolation= INTER_LINEAR)
+GRAY = cv2.fastNlMeansDenoising(GRAY,h=10, searchWindowSize=21,templateWindowSize=7)
+
 
 
 
 min_confidence = 0.6
-result = results = pytesseract.image_to_string(img,lang="kor")
+result = results = pytesseract.image_to_string(GRAY,lang="kor")
 string = results
 
 list = []
@@ -349,16 +331,17 @@ for i in string :
     result = result.replace("\n", " ")
     result = result.split(" ")
     recipe = []
-    for i in result :
-        if i != '' :
-            recipe.append(i)
-            #print(recipe)
-    out = []
-    for i in recipe:
-        for j in classes:
-            if j in i:
-                print("인식된 재료는 : ", j)
-                out.append(j)
+for i in result :
+    if i != '' :
+        recipe.append(i)
+        #print(recipe)
+out = []
+for i in recipe:
+    for j in classes:
+        if j in i:
+            print("인식된 재료는 : ", j)
+            out.append(j)
+print(set(out))
 ```
 
 

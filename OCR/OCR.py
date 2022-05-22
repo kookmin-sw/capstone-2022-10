@@ -1,3 +1,4 @@
+from cv2 import INTER_AREA, INTER_LINEAR
 import pytesseract
 import numpy as np
 import cv2
@@ -52,9 +53,9 @@ def four_point_transform(image, pts): ##4개의 꼭지점을 기준으로 투영
 
 ####### 이미지 읽기
 
-img = cv2.imread('test_img/test.jpeg')
-ratio = 500.0/img.shape[0]
-dim = (int(img.shape[1] * ratio), 500)
+img = cv2.imread('test_img/test2.jpg')
+ratio = 600.0/img.shape[0]
+dim = (int(img.shape[1] * ratio), 600)
 img = cv2.resize(img, dim, interpolation= cv2.INTER_AREA)
 og_img = img.copy()
 
@@ -73,13 +74,13 @@ for c in cnts:
     ## 컨투어의 길이를 반환
     approx = cv2.approxPolyDP(c, 0.02 * peri, True)
     ## 길이의 오차 2퍼센트로 도형을 근사화
-    if len(approx) == 4:
+    if len(approx) == 4 and cv2.contourArea(c)>=20000:
         ## 근사화한 도형의 꼭지점이 4개라면 그것이 문서의 외곽
         screenCnt = approx
         check = True
         break
 if check == False:
-      img = img
+      img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
     # cv2.imshow("IMG", img)
     # cv2.waitKey(0)
     # cv2.destroyAllWindows()
@@ -94,11 +95,16 @@ else :
 # cv2.imshow("warped", copy)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
+GRAY  = img.copy()
+h,w = GRAY.shape
+GRAY = cv2.resize(GRAY, (2*w, 2*h), interpolation= INTER_LINEAR)
+GRAY = cv2.fastNlMeansDenoising(GRAY,h=10, searchWindowSize=21,templateWindowSize=7)
+
 
 
 
 min_confidence = 0.6
-result = results = pytesseract.image_to_string(img,lang="kor")
+result = results = pytesseract.image_to_string(GRAY,lang="kor")
 string = results
 
 list = []
@@ -112,13 +118,14 @@ for i in string :
     result = result.replace("\n", " ")
     result = result.split(" ")
     recipe = []
-    for i in result :
-        if i != '' :
-            recipe.append(i)
-            #print(recipe)
-    out = []
-    for i in recipe:
-        for j in classes:
-            if j in i:
-                print("인식된 재료는 : ", j)
-                out.append(j)
+for i in result :
+    if i != '' :
+        recipe.append(i)
+        #print(recipe)
+out = []
+for i in recipe:
+    for j in classes:
+        if j in i:
+            print("인식된 재료는 : ", j)
+            out.append(j)
+print(set(out))
