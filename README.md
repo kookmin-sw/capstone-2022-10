@@ -154,13 +154,13 @@ blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False
 
 net.setInput(blob)
 outs = net.forward(output_layers)
-
+#### 모델사용 
 confidences = []
 names = []
 boxes = []
 colors = []
 
-
+#### 최소 confidence값을 기준으로 객체탐지
 for out in outs:
 	for detection in out:
 		scores = detection[5:]
