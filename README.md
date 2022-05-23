@@ -33,32 +33,18 @@ capstone-2022-45 created by GitHub Classroom.
 ##### #주의점 : Colab 무료버전은 최대 런타임 시간은 12시간이므로 구글 드라이브를 통한 데이터 백업 필요
 
 ## 파일구조
-YOLO
+
 
 ```
 ...  
-|── cfg/  
-|   └──custom-test-yolo.cfg   
-|── data/  
-|   |── labels/  
-|   |── dog.jpg  
-|   └── fruit10.jpg  
-|── images/  
-|   └── test.jpg  
-|── weights/    
-|   └── chart_custom-train-yolo.png  
-|── YOLOv3.py  
-|── classes.txt  
+|── .gitignore  
+|── Aptfile  
+|── Procfile  
+|── README.md  
+|── custom-test-yolo.cfg      
 |── requirements.txt  
+|── runtime.txt  
+|── server.py  
 ...   
 ```
-OCR
-```
-...  
-|── test_img/  
-|   └──test.jpeg
-|── OCR.py
-|── requirements.txt  
-...  
 
-```
