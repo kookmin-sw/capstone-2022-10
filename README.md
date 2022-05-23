@@ -28,11 +28,18 @@ We want to implement a function that searches for a recipe based on the recognit
 - 📎 [How Cook GitHub Wiki⭐](https://github.com/kookmin-sw/capstone-2022-10/wiki)
 - 📎 [How Cook 중간 발표 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%EC%A4%91%EA%B0%84%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf?raw=True)
 - 📎 [How Cook 소개 영상 원본](https://drive.google.com/file/d/1XycH4Z82Xn06QCra3Sg6E4PctV6QyFq5/view?usp=sharing)
+- 📎 [How Cook 최종 발표 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%EC%B5%9C%EC%A2%85%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf?raw=True)
+- 📎 [How Cook 수행결과보고서 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%EC%88%98%ED%96%89%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf?raw=True)
+- 📎 [How Cook 포스터 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%ED%8F%AC%EC%8A%A4%ED%84%B0.pdf?raw=True)
 - 📎 [How Cook 서비스]()(추후 배포 예정)
 
 ## 🎥프로젝트 소개 동영상
 
 https://user-images.githubusercontent.com/85275893/161413783-7137025c-5081-4e2d-8399-81392d9f2109.mp4
+
+## 🎥프로젝트 시연 동영상
+
+https://user-images.githubusercontent.com/85275893/169904849-7d9951fa-006f-4eac-939e-be1a194acfa9.mp4
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
 
