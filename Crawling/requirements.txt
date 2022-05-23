@@ -1,0 +1,2 @@
+selenuum==4.1.5
+requests==2.27.1
