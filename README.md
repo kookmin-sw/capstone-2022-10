@@ -62,37 +62,3 @@ OCR
 ...  
 
 ```
-
-
-## 필수 라이브러리 설치
-
-<details>
-<summary>  YOLO </summary>
-<div markdown="1"> 
-
-* YOLO테스트를 위한 필수 라이브러리 설치
-```python
-pip install opencv-python
-pip install numpy as np 
-https://drive.google.com/file/d/1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV/view?usp=sharing  
-	<해당 다운로드 파일을 YOLO/weights/ 경로에 넣어주세요>
-```
-
-</div>
-</details>
-
-<details>
-<summary>OCR </summary>
-<div markdown="1"> 
-
-* OCR을 위한 필수 라이브러리 설치
-
-```python
-sudo apt install tesseract-ocr 
-sudo apt-get install tesseract-ocr-kor
-pip install opencv-python
-pip install pytesseract
-```
-
-</div>
-</details>
