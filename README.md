@@ -3,6 +3,9 @@ capstone-2022-45 created by GitHub Classroom.
 
 # ML
 
+## Crawling 
+
+##### 파이어폭스,크롬등을 컨트롤 할 수 있는 Selenium을 이용하여 필요한 학습데이터 
 
 ## YOLOv3
 
