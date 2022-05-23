@@ -33,6 +33,18 @@ capstone-2022-45 created by GitHub Classroom.
 ##### #주의점 : Colab 무료버전은 최대 런타임 시간은 12시간이므로 구글 드라이브를 통한 데이터 백업 필요
 
 ## 파일구조
+
+Crawling
+
+```
+...  
+|── Crawling.py     
+|── README.md
+|── chromedriver  
+|── requirements.txt  
+...   
+```
+
 YOLO
 
 ```
