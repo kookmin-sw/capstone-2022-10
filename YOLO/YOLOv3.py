@@ -34,7 +34,6 @@ layer_names = net.getLayerNames()
 output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
 
 img = cv2.imread(file_name)
-
 h,w = img.shape[:2]
 height = int(h * width / w)
 blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False
