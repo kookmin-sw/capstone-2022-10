@@ -166,7 +166,7 @@ pip install opencv-python
 pip install pytesseract
 ```
 
-###  4. 로컬 환경 실행
+###  3. 로컬 환경 실행
 
 ```shell
 python3 OCR.py  -> OCR 모델 실행
