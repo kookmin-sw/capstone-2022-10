@@ -95,7 +95,8 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ### 📌Data Modeling
 - [Data Modeling Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel)
-- [Data Modeling 사용법(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling-Server)
+- [Data Modeling Server Code 보러가기](https://github.com/kookmin-sw/capstone-2022-10/tree/Datamodel_Server)
+- [Data Modeling 사용법(Github Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/Data-Modeling)
 
 ### 📌DevOps & Co-working
 - [DevOps & Co-working 사용 기술(GitHub Wiki 링크)](https://github.com/kookmin-sw/capstone-2022-10/wiki/DevOps-&-Co-working)
