@@ -44,7 +44,7 @@ We want to implement a function that searches for a recipe based on the recognit
 - 📎 [How Cook 최종 발표 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%EC%B5%9C%EC%A2%85%EB%B0%9C%ED%91%9C%EC%9E%90%EB%A3%8C.pdf?raw=True)
 - 📎 [How Cook 수행결과보고서 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%EC%88%98%ED%96%89%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf?raw=True)
 - 📎 [How Cook 포스터 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%ED%8F%AC%EC%8A%A4%ED%84%B0.pdf?raw=True)
-- 📎 [How Cook 서비스]()(추후 배포 예정)
+- 📎 [How Cook 서비스](http://3.37.229.176/)
 
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
@@ -81,7 +81,7 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 🔎 <span style="color:#FF9F1C">기술 스택 및 사용법</span>
 ### 📏 시스템 구성도
-![스크린샷, 2022-04-02 20-17-19](https://user-images.githubusercontent.com/85275893/161381061-608effbb-3391-43e9-91d0-8aa673ff528e.png)
+![시스템구성도](https://user-images.githubusercontent.com/81964758/170633586-0a73314c-ed85-426a-b61a-e7543faa415a.png)
 
 ### [🛠분야별 기술 스택(링크)](https://github.com/kookmin-sw/capstone-2022-10/tree/frontend)
 
