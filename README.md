@@ -52,7 +52,7 @@ https://user-images.githubusercontent.com/85275893/169904849-7d9951fa-006f-4eac-
 
 2. 👨 박준용
 
-	-  Role: 재료 이미지 데이터 구축, 이미지, 문자 인식 모델 학습
+	-  Role: 재료 이미지 데이터 구축, 이미지, 문자 인식 모델 학습 및 이미지 전처리
 	- Student ID: ****5298
 	-  Email: Jypark93@kookmin.ac.kr
 	-  Github:[@junyong1111](https://github.com/junyong1111)
