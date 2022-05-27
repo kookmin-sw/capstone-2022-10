@@ -151,27 +151,26 @@ pip install opencv-python
 pip install numpy as np
 pip install cmake
 pip install dlib
+https://drive.google.com/file/d/1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV/view?usp=sharing  
+	<해당 다운로드 파일을 YOLO/weights/ 경로에 넣어주세요>
 ```
 
-### 2. Tensorflow 설치
 
-```shell
-pip install opencv-python
-pip install tensorflow
-pip install numpy
-```
 	
-### 3. OCR 설치
+### 2. OCR 설치
 
 ```shell
 sudo apt install tesseract-ocr 
+sudo apt-get install tesseract-ocr-kor
+pip install opencv-python
 pip install pytesseract
 ```
 
 ###  4. 로컬 환경 실행
 
 ```shell
-# 추후 업로드 예정
+python3 OCR.py  -> OCR 모델 실행
+python3 YOLOv3.py -> YOLO 모델 실행
 ```
 
 </details>
