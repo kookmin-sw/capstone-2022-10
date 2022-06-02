@@ -1,12 +1,12 @@
 import { EntityManager } from 'typeorm';
+import { RowDataPacket } from 'mysql2';
 
 import Recipe from './entity';
 
-import { AbsRecipeRepository } from './type/repository';
-
-import { ModifyRecipeDTO } from './type/dto';
-
 import { getFormattedDate } from '../helper/helper';
+
+import { AbsRecipeRepository } from './type/repository';
+import { ModifyRecipeDTO } from './type/dto';
 
 export default class RecipeRepository implements AbsRecipeRepository {
 	private static instance: AbsRecipeRepository;
@@ -32,16 +32,30 @@ export default class RecipeRepository implements AbsRecipeRepository {
 		return RecipeRepository.em.create(Recipe, { title: rawRecipe.title });
 	}
 
-	async save(recipe: Recipe): Promise<void> {
-		await RecipeRepository.em.save(recipe);
+	async save(recipe: Recipe): Promise<number> {
+		return (await RecipeRepository.em.save(recipe)).id;
 	}
 
 	async findById(id: number): Promise<Recipe> {
 		return await RecipeRepository.em.findOne(Recipe, id);
 	}
 
+	async findByIds(ids: number[]): Promise<Recipe[]> {
+		return await RecipeRepository.em
+			.getRepository(Recipe)
+			.createQueryBuilder('recipe')
+			.select()
+			.where('recipe.id in (:ids)', { ids })
+			.getMany();
+	}
+
 	async findByTitle(title: string): Promise<Recipe[]> {
-		return await RecipeRepository.em.getRepository(Recipe).find({ where: { title: title } });
+		return await RecipeRepository.em
+			.getRepository(Recipe)
+			.createQueryBuilder('recipe')
+			.select()
+			.where(`recipe.title like :title`, { title: `%${title}%` })
+			.getMany();
 	}
 
 	async findByTodaysMostLiked(): Promise<Recipe[]> {
@@ -65,12 +79,25 @@ export default class RecipeRepository implements AbsRecipeRepository {
 			.getMany();
 	}
 
-	async findBySubscribingChefsLatest(id: number): Promise<Recipe[]> {
+	async findBySubscribingChefsLatest(id: number): Promise<RowDataPacket[]> {
 		return await RecipeRepository.em.query(`
-			select * from recipe as r where (r.user_id, r.create_date) in (SELECT r.user_id, max(r.create_date) FROM (select PUBLISHER_ID from SUBSCRIBE where SUBSCRIBER_ID = ${id}) as p JOIN RECIPE as r ON p.PUBLISHER_ID = r.USER_ID group by r.user_id);`);
+			select * 
+			from RECIPE as r 
+			where (r.user_id, r.create_date) in (
+				SELECT r.user_id, max(r.create_date) 
+				FROM (
+					select STAR_ID 
+					from SUBSCRIBE 
+					where FAN_ID = ${id}) as p JOIN RECIPE as r ON p.STAR_ID = r.USER_ID 
+				group by r.user_id
+			);`);
 	}
 
 	async findAll(): Promise<Recipe[]> {
 		return await RecipeRepository.em.getRepository(Recipe).find();
+	}
+
+	async findRandomRecipe(count: number): Promise<RowDataPacket[]> {
+		return await RecipeRepository.em.query(`select * from RECIPE order by rand() limit ${count}`);
 	}
 }

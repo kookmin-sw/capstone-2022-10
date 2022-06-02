@@ -1,8 +1,12 @@
-function getFormattedDate(rawDate: Date): string {
-	const year = rawDate.getFullYear().toString();
-	const month = rawDate.getMonth().toString();
-	const date = rawDate.getDate().toString();
-	return year.toString() + (month === '12' ? '01' : month.length === 2 ? parseFloat(month) + 1 : '0' + (parseFloat(month) + 1)) + date;
+function getFormattedDate(param: Date): string {
+	const year = param.getFullYear().toString();
+	const rawMonth = String(Number(param.getMonth().toString()) + 1);
+	const rawDate = String(param.getDate().toString());
+
+	const month = rawMonth === '13' ? '01' : rawMonth.length === 1 ? '0' + rawMonth : rawMonth;
+	const date = rawDate.length === 1 ? '0' + rawDate : rawDate;
+
+	return [year, month, date].join('');
 }
 
 const ServerError = {

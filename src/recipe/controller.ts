@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { ServerError } from '../helper/helper';
+import { mustAuth, optionalAuth } from '../helper/middleware';
 import UserError from '../user/type/error';
 
 import { AbsRecipeController } from './type/controller';
@@ -27,15 +28,16 @@ export default class RecipeController implements AbsRecipeController {
 	initRouter(app: express.Application): void {
 		if (RecipeController.instance) return;
 
-		RecipeController.router.get('/subscribe-chef-latest', this.getSubscribingChefsLatest);
+		RecipeController.router.get('/subscribe-chef-latest', mustAuth, this.getSubscribingChefsLatest);
+		RecipeController.router.get('/recommendation', mustAuth, this.getRecommendation);
 		RecipeController.router.get('/today-most-liked', this.getTodaysMostLiked);
 		RecipeController.router.get('/latest', this.getLatestCreated);
 		RecipeController.router.get('/search', this.getByTitle);
 		RecipeController.router.get('/:id', this.getById);
-		RecipeController.router.post('/search', this.getByIngredient);
-		RecipeController.router.post('/', this.createRecipe);
-		RecipeController.router.put('/:id', this.updateRecipe);
-		RecipeController.router.delete('/:id', this.deleteRecipe);
+		RecipeController.router.post('/search', optionalAuth, this.getByIngredient);
+		RecipeController.router.post('/', mustAuth, this.createRecipe);
+		RecipeController.router.put('/:id', mustAuth, this.updateRecipe);
+		RecipeController.router.delete('/:id', mustAuth, this.deleteRecipe);
 
 		app.use(RecipeController.PATH, RecipeController.router);
 	}
@@ -66,9 +68,9 @@ export default class RecipeController implements AbsRecipeController {
 		try {
 			const { userId, recipe } = req.body;
 
-			await RecipeController.recipeService.createRecipe(userId, recipe);
+			const recipeId = await RecipeController.recipeService.createRecipe(userId, recipe);
 
-			res.status(200).send();
+			res.status(200).send(recipeId);
 		} catch (error) {
 			switch (error.message) {
 				case UserError.NOT_FOUND.message:
@@ -105,9 +107,8 @@ export default class RecipeController implements AbsRecipeController {
 	async getById(req: Request, res: Response): Promise<void> {
 		try {
 			const recipeId = Number(req.params.id);
-			const { userId } = req.body;
 
-			const findRecipes = await RecipeController.recipeService.findById(recipeId, userId);
+			const findRecipes = await RecipeController.recipeService.findById(recipeId);
 
 			res.status(200).send(findRecipes);
 		} catch (error) {
@@ -168,7 +169,8 @@ export default class RecipeController implements AbsRecipeController {
 
 	async getSubscribingChefsLatest(req: Request, res: Response): Promise<void> {
 		try {
-			const findRecipes = await RecipeController.recipeService.findSubscribingChefsLatest(3);
+			const { userId } = req.body;
+			const findRecipes = await RecipeController.recipeService.findSubscribingChefsLatest(Number(userId));
 
 			res.status(200).send(findRecipes);
 		} catch (error) {
@@ -182,11 +184,25 @@ export default class RecipeController implements AbsRecipeController {
 
 	async getByIngredient(req: Request, res: Response): Promise<void> {
 		try {
-			const { ingredients } = req.body;
-
-			const findRecipes = await RecipeController.recipeService.findByIngredient(ingredients);
+			const { ingredients, userId } = req.body;
+			const findRecipes = await RecipeController.recipeService.findByIngredient(ingredients, userId);
 
 			res.status(200).send(findRecipes);
+		} catch (error) {
+			switch (error.message) {
+				default:
+					res.status(ServerError.SERVER_ERROR.code).send(ServerError.SERVER_ERROR.message);
+					return;
+			}
+		}
+	}
+
+	async getRecommendation(req: Request, res: Response): Promise<void> {
+		try {
+			const { userId } = req.body;
+			const recipes = await RecipeController.recipeService.findRecommendation(userId);
+
+			res.status(200).send(recipes);
 		} catch (error) {
 			switch (error.message) {
 				default:

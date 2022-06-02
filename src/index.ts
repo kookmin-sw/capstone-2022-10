@@ -3,6 +3,7 @@ import { Connection, createConnection, getConnectionOptions } from 'typeorm';
 import express from 'express';
 
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 
 import Container from './container';
 
@@ -29,6 +30,7 @@ export default class Application {
 			})
 		);
 		Application.app.use(express.urlencoded({ extended: true }));
+		Application.app.use(cookieParser());
 	}
 
 	private static async initDatabase(): Promise<Connection> {
@@ -37,7 +39,7 @@ export default class Application {
 	}
 
 	private static initApplication(): void {
-		Application.app.listen(4000, () => console.log('Application started successfully'));
+		Application.app.listen(4000);
 	}
 }
 

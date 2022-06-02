@@ -20,4 +20,5 @@ export abstract class AbsRecipeController {
 	getLatestCreated(req: Request, res: Response): Promise<void>;
 	getSubscribingChefsLatest(req: Request, res: Response): Promise<void>;
 	getByIngredient(req: Request, res: Response): Promise<void>;
+	getRecommendation(req: Request, res: Response): Promise<void>;
 }

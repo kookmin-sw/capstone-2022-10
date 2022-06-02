@@ -10,4 +10,5 @@ export class AbsIngredientRepository {
 	private constructor(dependency);
 
 	findByName(ingredientName: string): Promise<Ingredient[]>;
+	findByNameList(ingredients: string[]): Promise<Ingredient[]>;
 }

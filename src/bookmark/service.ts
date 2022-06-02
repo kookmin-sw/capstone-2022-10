@@ -25,6 +25,16 @@ export default class BookmarkService implements AbsBookmarkService {
 		BookmarkService.userRepository = dependency.userRepository;
 		BookmarkService.recipeRepository = dependency.recipeRepository;
 	}
+	async checkBookmark(recipeId: number, userId: number): Promise<boolean | Error> {
+		const recipe = await BookmarkService.recipeRepository.findById(recipeId);
+		const user = await BookmarkService.userRepository.findById(userId);
+		if (!recipe) throw new Error(RecipeError.NOT_FOUND.message);
+		if (!user) throw new Error(UserError.NOT_FOUND.message);
+
+		const likeUsers = await recipe.likeUsers;
+
+		return likeUsers.filter((user) => Number(user.id) === userId).length !== 0;
+	}
 
 	async changeBookmark(recipeId: number, userId: number): Promise<void> {
 		const user = await BookmarkService.userRepository.findById(userId);

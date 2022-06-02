@@ -1,4 +1,5 @@
 import { EntityManager } from 'typeorm';
+import { RowDataPacket } from 'mysql2';
 
 import User from './entity';
 
@@ -28,14 +29,6 @@ export default class UserRepository implements AbsUserRepository {
 		await UserRepository.em.remove(user);
 	}
 
-	async updateThumbnail(id: number, thumbnailUrl: string): Promise<void> {
-		await UserRepository.em.createQueryBuilder().update(User).set({ thumbnailUrl }).where('id = :id', { id }).execute();
-	}
-
-	async deleteThumbnail(id: number): Promise<void> {
-		await UserRepository.em.createQueryBuilder().update(User).set({ thumbnailUrl: 'empty' }).where('id = :id', { id }).execute();
-	}
-
 	async updateUserInfomation(id: number, updateUserInfomation: UpdateUserDTO): Promise<void> {
 		const { nickname, loginPassword, description } = updateUserInfomation;
 		await UserRepository.em
@@ -51,10 +44,21 @@ export default class UserRepository implements AbsUserRepository {
 	}
 
 	async findByNickname(nickname: string): Promise<User[]> {
-		return await UserRepository.em.find(User, { where: { nickname } });
+		return await UserRepository.em
+			.getRepository(User)
+			.createQueryBuilder('user')
+			.select()
+			.where('user.nickname like :nickname', { nickname: `%${nickname}%` })
+			.getMany();
 	}
 
 	async findByLoginId(loginId: string): Promise<User> {
 		return await UserRepository.em.findOne(User, { where: { loginId } });
+	}
+
+	async getTodayChef(): Promise<RowDataPacket[]> {
+		return await UserRepository.em.query(`
+			select * from USER order by rand() limit 6
+		`);
 	}
 }

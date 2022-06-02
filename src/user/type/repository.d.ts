@@ -1,3 +1,4 @@
+import { RowDataPacket } from 'mysql2';
 import { EntityManager } from 'typeorm';
 
 import User from '../entity';
@@ -15,11 +16,9 @@ export abstract class AbsUserRepository {
 	remove(user: User): Promise<void>;
 
 	updateUserInfomation(id: number, updateUserInfomation: UpdateUserDTO): Promise<void>;
-	updateThumbnail(id: number, thumbnailUrl: string): Promise<void>;
-
-	deleteThumbnail(id: number): Promise<void>;
 
 	findById(id: number): Promise<User>;
 	findByNickname(nickname: string): Promise<User[]>;
 	findByLoginId(loginId: string): Promise<User>;
+	getTodayChef(): Promise<RowDataPacket[]>;
 }

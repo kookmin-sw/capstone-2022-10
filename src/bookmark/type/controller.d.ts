@@ -12,5 +12,6 @@ export abstract class AbsBookmarkController {
 	private constructor(dependency);
 	initRouter(app: express.Application): void;
 
+	checkBookmark(req: Request, res: Response): Promise<void>;
 	changeBookmark(req: Request, res: Response): Promise<void>;
 }

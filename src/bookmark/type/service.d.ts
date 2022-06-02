@@ -11,5 +11,6 @@ export abstract class AbsBookmarkService {
 	public static getInstance(dependency): AbsBookmarkService;
 	private constructor(dependency);
 
+	checkBookmark(recipeId: number, userId: number): Promise<boolean | Error>;
 	changeBookmark(recipeId: number, userId: number): Promise<void>;
 }

@@ -2,8 +2,7 @@ import { Column, Entity, Generated, JoinTable, ManyToMany, OneToMany, PrimaryCol
 
 import DateInfo from '../dateInfo/entity';
 import Recipe from '../recipe/entity';
-
-import { CreateUserDTO } from './type/dto';
+import UserIngredient from '../userIngredient/entity';
 
 export enum loginMethod {
 	LOCAL = 'local',
@@ -21,6 +20,8 @@ export enum grade {
 	LEVEL5 = 5,
 }
 
+const DEFAULT_THUMBNAIL_PATH = '/image/icon/header/defaultProfile.png';
+
 @Entity({ name: 'USER' })
 export default class User {
 	@PrimaryColumn({ name: 'USER_ID', type: 'bigint', unsigned: true })
@@ -31,7 +32,7 @@ export default class User {
 	recipes: Promise<Recipe[]>;
 
 	@ManyToMany(() => Recipe, (recipe) => recipe.likeUsers, { lazy: true, nullable: false })
-	@JoinTable({ name: 'BOOKMARK', joinColumn: { name: 'RECIPE_ID' }, inverseJoinColumn: { name: 'USER_ID' } })
+	@JoinTable({ name: 'BOOKMARK', joinColumn: { name: 'USER_ID' }, inverseJoinColumn: { name: 'RECIPE_ID' } })
 	bookmarks: Recipe[];
 
 	// 나를 구독하는 사람들
@@ -42,6 +43,9 @@ export default class User {
 	// 내가 구독하는 사람들
 	@ManyToMany(() => User, (user) => user.fans, { lazy: true, nullable: false })
 	stars: User[];
+
+	@OneToMany(() => UserIngredient, (userIngredient) => userIngredient.user, { lazy: true, cascade: true })
+	ingredients: UserIngredient[];
 
 	@Column(() => DateInfo, { prefix: false })
 	date: DateInfo;
@@ -57,7 +61,7 @@ export default class User {
 	loginId: string;
 
 	//회원가입 기본 정보
-	@Column({ name: 'LOGIN_PASSWORD', type: 'varchar', length: 30, nullable: false })
+	@Column({ name: 'LOGIN_PASSWORD', type: 'varchar', length: 100, nullable: false })
 	loginPassword: string;
 
 	@Column({ name: 'LOGIN_METHOD', type: 'enum', enum: loginMethod, default: loginMethod.LOCAL, nullable: false })
@@ -67,13 +71,13 @@ export default class User {
 	@Column({ name: 'NICKNAME', type: 'varchar', length: 50, nullable: false, unique: true })
 	nickname: string;
 
-	@Column({ name: 'THUMBNAIL_URL', type: 'varchar', length: 2048, default: 'empty', nullable: false })
+	@Column({ name: 'THUMBNAIL_URL', type: 'varchar', length: 2048, default: DEFAULT_THUMBNAIL_PATH, nullable: false })
 	thumbnailUrl: string;
 
 	@Column({
 		name: 'DESCRIPTION',
 		type: 'varchar',
-		default: '안녕하세요!',
+		default: 'hello!',
 		length: 900,
 		nullable: false,
 	})
@@ -88,11 +92,11 @@ export default class User {
 	@Column({ name: 'NUMBER_OF_FAN', type: 'int', default: 0, nullable: false, unsigned: true })
 	numberOfFan: number;
 
-	static create(createUserInformation: CreateUserDTO): User {
+	static create(loginId: string, loginPassword: string): User {
 		const user = new User();
-		user.loginId = createUserInformation.loginId;
-		user.loginPassword = createUserInformation.loginPassword;
-		user.nickname = createUserInformation.loginId;
+		user.loginId = loginId;
+		user.loginPassword = loginPassword;
+		user.nickname = loginId;
 		return user;
 	}
 }

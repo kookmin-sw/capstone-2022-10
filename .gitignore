@@ -133,3 +133,4 @@ dist
 build
 .rest
 .DS_Store
+goorm.manifest

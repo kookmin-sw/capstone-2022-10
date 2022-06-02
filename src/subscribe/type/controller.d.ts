@@ -12,5 +12,6 @@ export abstract class AbsSubscribeController {
 	private constructor(dependency);
 	initRouter(app: express.Application): void;
 
+	checkSubscription(req: Request, res: Response): Promise<void>;
 	changeSubscribe(req: Request, res: Response): Promise<void>;
 }

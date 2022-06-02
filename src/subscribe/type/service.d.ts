@@ -9,5 +9,6 @@ export abstract class AbsSubscribeService {
 	public static getInstance(dependency): AbsSubscribeService;
 	private constructor(dependency);
 
-	changeSubscribe(userId: number, starId: number): Promise<void | Error>;
+	checkSubscription(userId: number, starId: number): Promise<boolean>;
+	changeSubscribe(userId: number, starId: number): Promise<boolean | Error>;
 }

@@ -13,12 +13,17 @@
 		"typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js"
 	},
 	"dependencies": {
-		"cookie-parser": "~1.4.4",
+		"@types/bcrypt": "^5.0.0",
+		"@types/cookie-parser": "^1.4.2",
+		"@types/jsonwebtoken": "^8.5.8",
+		"bcrypt": "^5.0.1",
+		"cookie-parser": "^1.4.6",
 		"cors": "^2.8.5",
 		"cross-env": "^7.0.3",
 		"debug": "~2.6.9",
 		"express": "^4.17.3",
 		"http-errors": "~1.6.3",
+		"jsonwebtoken": "^8.5.1",
 		"morgan": "~1.9.1",
 		"mysql": "^2.14.1",
 		"mysql2": "^2.3.3",

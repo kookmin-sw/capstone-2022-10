@@ -1,4 +1,5 @@
 import { EntityManager } from 'typeorm';
+import Tag from '../tag/entity';
 
 import RecipeTag from './entity';
 
@@ -17,6 +18,9 @@ export default class RecipeTagRepository implements AbsRecipeTagRepository {
 
 	private constructor(dependency) {
 		RecipeTagRepository.em = dependency.em;
+	}
+	async findByTag(tag: Tag): Promise<RecipeTag[]> {
+		return await RecipeTagRepository.em.getRepository(RecipeTag).find({ where: { tag: tag } });
 	}
 
 	async findAll(): Promise<RecipeTag[]> {

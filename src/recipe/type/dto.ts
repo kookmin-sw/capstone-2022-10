@@ -35,7 +35,7 @@ export class ReadRecipeDetailDTO extends ReadRecipeDTO {
 	readonly referenceUrl: string;
 	readonly description: string;
 	readonly serving: number;
-	readonly ingredients: RecipeIngredient[];
+	readonly recipeIngredients: RecipeIngredient[];
 	readonly recipeDescriptions: RecipeDescription[];
 	readonly bookmark: boolean;
 
@@ -43,7 +43,7 @@ export class ReadRecipeDetailDTO extends ReadRecipeDTO {
 		recipe: Recipe,
 		tags: Tag[],
 		user: User,
-		ingredients: RecipeIngredient[],
+		recipeIngredients: RecipeIngredient[],
 		recipeDescriptions: RecipeDescription[],
 		bookmark: boolean
 	) {
@@ -51,7 +51,7 @@ export class ReadRecipeDetailDTO extends ReadRecipeDTO {
 		this.referenceUrl = recipe.referenceUrl;
 		this.description = recipe.description;
 		this.serving = recipe.serving;
-		this.ingredients = ingredients;
+		this.recipeIngredients = recipeIngredients;
 		this.recipeDescriptions = recipeDescriptions;
 		this.bookmark = bookmark;
 	}
@@ -60,11 +60,11 @@ export class ReadRecipeDetailDTO extends ReadRecipeDTO {
 // create | update
 export interface ModifyRecipeDTO {
 	readonly title: string;
-	readonly tags: Tag[] | string[];
+	readonly tags: Tag[];
 	readonly description: string;
 	readonly thumbnailUrl: string;
 	readonly referenceUrl: string;
 	readonly serving: number;
-	readonly ingredients: ModifyRecipeIngredientDTO[];
-	readonly recipeDescriptions: ModifyRecipeDescriptionDTO[];
+	readonly recipeIngredients: RecipeIngredient[];
+	readonly recipeDescriptions: RecipeDescription[];
 }

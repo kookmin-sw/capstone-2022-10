@@ -19,7 +19,16 @@ export default class IngredientRepository implements AbsIngredientRepository {
 		IngredientRepository.em = dependency.em;
 	}
 
-	async findByName(ingredientName: string): Promise<Ingredient[]> {
-		return await IngredientRepository.em.getRepository(Ingredient).find({ where: { name: ingredientName } });
+	async findByName(name: string): Promise<Ingredient[]> {
+		return await IngredientRepository.em.getRepository(Ingredient).find({ where: { name } });
+	}
+
+	async findByNameList(ingredients: string[]): Promise<Ingredient[]> {
+		return await IngredientRepository.em
+			.getRepository(Ingredient)
+			.createQueryBuilder('ingredient')
+			.select()
+			.where('ingredient.name in (:ingredients)', { ingredients })
+			.getMany();
 	}
 }

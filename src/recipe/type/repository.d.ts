@@ -1,3 +1,4 @@
+import { RowDataPacket } from 'mysql2';
 import { EntityManager } from 'typeorm';
 
 import Recipe from '../entity';
@@ -13,11 +14,13 @@ export abstract class AbsRecipeRepository {
 
 	remove(recipe: Recipe): Promise<void>;
 	create(rawRecipe: ModifyRecipeDTO): Recipe;
-	save(recipe: Recipe): Promise<void>;
-	findBySubscribingChefsLatest(id: number): Promise<Recipe[]>;
+	save(recipe: Recipe): Promise<number>;
+	findBySubscribingChefsLatest(id: number): Promise<RowDataPacket[]>;
 	findByTitle(title: string): Promise<Recipe[]>;
 	findByTodaysMostLiked(): Promise<Recipe[]>;
 	findByLatestCreated(): Promise<Recipe[]>;
 	findById(id: number): Promise<Recipe>;
+	findByIds(ids: number[]): Promise<Recipe[]>;
 	findAll(): Promise<Recipe[]>;
+	findRandomRecipe(count: number): Promise<RowDataPacket[]>;
 }

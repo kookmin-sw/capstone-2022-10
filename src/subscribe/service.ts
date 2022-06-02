@@ -19,21 +19,37 @@ export default class SubscribeService implements AbsSubscribeService {
 		SubscribeService.userRepository = dependency.userRepository;
 	}
 
-	async changeSubscribe(userId: number, starId: number): Promise<void | Error> {
+	async checkSubscription(userId: number, starId: number): Promise<boolean> {
 		const user = await SubscribeService.userRepository.findById(userId);
 		const star = await SubscribeService.userRepository.findById(starId);
 
 		if (!user || !star) throw new Error(UserError.NOT_FOUND.message);
 
-		const index = (await user.stars).findIndex((subscribedUser) => (subscribedUser.id = starId));
+		return (await user.stars).filter((star) => Number(star.id) === starId).length !== 0;
+	}
+
+	async changeSubscribe(userId: number, starId: number): Promise<boolean | Error> {
+		const user = await SubscribeService.userRepository.findById(userId);
+		const star = await SubscribeService.userRepository.findById(starId);
+
+		if (!user || !star) throw new Error(UserError.NOT_FOUND.message);
+
+		let isSubscription = false;
+
+		const subscribeList = await user.stars;
+		const index = subscribeList.findIndex((subscribedUser) => subscribedUser.id == starId);
 		if (index === -1) {
-			(await user.stars).push(star);
+			subscribeList.push(star);
 			star.numberOfFan++;
+			isSubscription = true;
 		} else {
-			(await user.stars).splice(index, 1);
+			subscribeList.splice(index, 1);
 			star.numberOfFan--;
 		}
 
+		user.stars = subscribeList;
 		await SubscribeService.subscribeRepository.changeSubscribe(user, star);
+
+		return isSubscription;
 	}
 }

@@ -9,7 +9,6 @@ import User from '../user/entity';
 import { ModifyRecipeDTO } from './type/dto';
 
 export enum serving {
-	DONTKNOW = 0,
 	FOR1 = 1,
 	FOR2 = 2,
 	FOR3 = 3,
@@ -54,7 +53,7 @@ export default class Recipe {
 	@Column({ name: 'REFERENCE_URL', type: 'varchar', length: 2048, nullable: false })
 	referenceUrl: string;
 
-	@Column({ name: 'SERVING', type: 'enum', enum: serving, nullable: false })
+	@Column({ name: 'SERVING', type: 'enum', enum: serving, default: serving.FOR1, nullable: false })
 	serving: serving;
 
 	@Column({ name: 'NUMBER_OF_LIKE', type: 'int', nullable: false, default: 0 })
