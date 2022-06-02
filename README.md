@@ -50,16 +50,3 @@ yarn start
 │  └── index.tsx
 ...
 ```
-### 1. `api`
-### 2. `componenet`
-### 3. `hook`
-### 4. `router`
-### 5. `page`
-### 6. `state`
-
-## 
-
-## Copyright
-- Icons
-    - 아이콘 저작권(해당하는 아이콘 사용 페이지에 표시)
-        -  [Link to icon8.com](https://icons8.com/icons/set/heart)
