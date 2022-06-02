@@ -31,7 +31,8 @@ We want to implement a function that searches for a recipe based on the recognit
 
 ## 🎥 <span style="color:#FF9F1C">프로젝트 시연 동영상</span>
 
-<video src="[https://user-images.githubusercontent.com/85275893/169904849-7d9951fa-006f-4eac-939e-be1a194acfa9.mp4](https://user-images.githubusercontent.com/81964758/171633952-d8ba7dfc-0656-4d9d-8582-02c5a6596b48.mp4)" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:300px;">
+ <video src="https://user-images.githubusercontent.com/81964758/171636504-4ea07ef9-ff99-40fd-a9d6-aa46c54886f2.mp4" data-canonical-src="https://user-images.githubusercontent.com/81964758/171636504-4ea07ef9-ff99-40fd-a9d6-aa46c54886f2.mp4" controls="controls" muted="muted" class="d-block rounded-bottom-2 border-top width-fit" style="max-height:640px;">
+
   </video>
 
 ## 💻 <span style="color:#FF9F1C">소개 자료</span>
