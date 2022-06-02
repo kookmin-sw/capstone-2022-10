@@ -1,22 +1,26 @@
 # 2022 Capstone10 Frontend
-# 참여자 및 주요 역할
-- 이원주
-    - 
-- 강지수
-     - 
-- 이세희
-     - 
-- 공통 역할
-    - 
+
 # How to Start
 
 ## 초기 환경설정
-### 주의: node 12버전이상
-### yarn package 설치
-- yarn 설치 후 진행
-- package.json 패키지 설치 
+### 1. 기본 설정
+- Typescript 
+- React
 ```shell
-yarn install
+yarn add yarn create-react-app styling-with-styled-components --template typescript 
+yarn add typescript @types/node @types/react @types/react-dom @types/jest
+```
+### 2. 그 외 기능들
+- React Router Dom v6
+- Recoil
+- Styled Components
+```shell
+yarn add react-router-dom @types/react-router-dom
+
+yarn add recoil @types/recoil
+
+yarn add styled-components @types/styled-components
+yarn add babel-plugin-styled-components
 ```
 ## 시작하는 법
 
@@ -46,16 +50,3 @@ yarn start
 │  └── index.tsx
 ...
 ```
-### 1. `api`
-### 2. `componenet`
-### 3. `hook`
-### 4. `router`
-### 5. `page`
-### 6. `state`
-
-## 
-
-## Copyright
-- Icons
-    - 아이콘 저작권(해당하는 아이콘 사용 페이지에 표시)
-        -  [Link to icon8.com](https://icons8.com/icons/set/heart)
