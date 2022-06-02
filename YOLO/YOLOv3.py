@@ -3,16 +3,16 @@ import cv2
 import gdown
 import os
 
-if not os.path.exists('custom-train-yolo_final.weights'):
-    url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
-    gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
+if not os.path.exists('Capstone.weights'):
+        url = 'https://drive.google.com/uc?id=1-F-C5ImQSp12bAmm8VaugJwn6TGeyIgy&export=download'
+        gdown.download(url, 'Capstone.weights', quiet = False)
 
-min_confidence = 0.5
+min_confidence = 0.1
 width = 800
 height = 0
 show_ratio = 1.0
 
-Weights = 'custom-train-yolo_final.weights'
+Weights = 'Capstone.weights'
 file_name = "images/test.jpg"
 test_cfg = "cfg/custom-test-yolo.cfg"
 net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
@@ -31,12 +31,12 @@ anw = []
  
 color_lists = np.random.uniform(0, 255, size= (len(classes), 3))
 layer_names = net.getLayerNames()
-output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
+output_layers = ['yolo_139', 'yolo_150', 'yolo_161']
 
 img = cv2.imread(file_name)
 h,w = img.shape[:2]
 height = int(h * width / w)
-blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False
+blob = cv2.dnn.blobFromImage(img, 0.00392, (608,608), swapRB=True, crop=False
 							 )
 
 net.setInput(blob)
