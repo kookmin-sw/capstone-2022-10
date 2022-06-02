@@ -40,7 +40,7 @@ https://user-images.githubusercontent.com/85275893/161413783-7137025c-5081-4e2d-
 
 ## 🎥프로젝트 시연 동영상
 
-https://user-images.githubusercontent.com/85275893/169904849-7d9951fa-006f-4eac-939e-be1a194acfa9.mp4
+https://user-images.githubusercontent.com/81964758/171636504-4ea07ef9-ff99-40fd-a9d6-aa46c54886f2.mp4
 
 ## 👨‍🍳 <span style="color:#FF9F1C">팀 소개 및 역할</span>
 
