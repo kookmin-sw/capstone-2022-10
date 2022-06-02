@@ -1,8 +1,9 @@
 import React from 'react';
-import Modal from 'react-modal';
+import { useNavigate } from 'react-router';
 import { useSetRecoilState } from 'recoil';
 import API from '../../api';
 import { isModalOpenAtom } from '../../state';
+import { StyledConfirmModal } from './style';
 
 type props = {
   isOpen: boolean;
@@ -10,25 +11,33 @@ type props = {
 
 const ConfirmExitModal: React.FC<props> = ({ isOpen }) => {
   const setIsModalOpen = useSetRecoilState(isModalOpenAtom);
+  const navigate = useNavigate();
 
   function cancle() {
     setIsModalOpen(false);
   }
   async function submit() {
+    navigate('/');
     await API.User.remove.exit();
+    localStorage.clear();
+    sessionStorage.clear();
     setIsModalOpen(false);
   }
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={() => setIsModalOpen(false)} shouldCloseOnOverlayClick={false}>
-      <p>정말 탈퇴 하시겠습니까?</p>
-      <button type="button" onClick={cancle}>
+    <StyledConfirmModal isOpen={isOpen} onRequestClose={() => setIsModalOpen(false)} shouldCloseOnOverlayClick={false}>
+      <div className="message">
+        정말 탈퇴
+        <br />
+        하시겠습니까?
+      </div>
+      <button className="cancel" type="button" onClick={cancle}>
         아니오
       </button>
-      <button type="button" onClick={submit}>
+      <button className="submit" type="button" onClick={submit}>
         예
       </button>
-    </Modal>
+    </StyledConfirmModal>
   );
 };
 

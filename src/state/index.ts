@@ -1,5 +1,5 @@
 import { atom } from 'recoil';
-import { BaseUserDTO, ReadUserDetailDTO } from '../types/user';
+import { BaseUserDTO, UpdateUserDTO } from '../types/user';
 
 const signinUserAtom = atom({
   key: 'signinUser',
@@ -16,9 +16,38 @@ const modalTypeAtom = atom({
   default: '',
 });
 
-const pageOwnerAtom = atom({
-  key: 'pageOwnerAtom',
-  default: ReadUserDetailDTO.getEmptyReadUserDetail(),
+const updateUserAtom = atom({
+  key: 'updateUserAtom',
+  default: UpdateUserDTO.getEmptyUpdateUser(),
 });
 
-export { signinUserAtom, isModalOpenAtom, modalTypeAtom, pageOwnerAtom };
+const ingredientResultListAtom = atom<string[]>({
+  key: 'ingredientResultList',
+  default: [],
+});
+
+const formDataAtom = atom<FormData | string>({
+  key: 'formData',
+  default: '',
+});
+
+const navButtonAtom = atom<string>({
+  key: 'navButton',
+  default: '',
+});
+
+const triggerAtom = atom<number>({
+  key: 'trigger',
+  default: 0,
+});
+
+export {
+  signinUserAtom,
+  isModalOpenAtom,
+  modalTypeAtom,
+  updateUserAtom,
+  ingredientResultListAtom,
+  formDataAtom,
+  navButtonAtom,
+  triggerAtom,
+};

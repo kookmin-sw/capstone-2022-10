@@ -12,11 +12,18 @@ class BaseUserDTO {
   }
 }
 
+interface ReadUserDTO extends BaseUserDTO {
+  readonly description: string;
+  readonly grade: string;
+  readonly numberOfFan: number;
+  readonly numberOfLike: number;
+}
+
 class ReadUserDetailDTO extends BaseUserDTO {
   description: string;
   grade: number;
-  numberOfSubscribers: number;
-  numberOfLikes: number;
+  numberOfFan: number;
+  numberOfLike: number;
   myRecipe: BaseRecipeDTO[];
   likeRecipe: BaseRecipeDTO[];
   subscribingUser: BaseUserDTO[];
@@ -33,8 +40,8 @@ class ReadUserDetailDTO extends BaseUserDTO {
       super(updatedUser.id, updatedUser.nickname, updatedUser.thumbnailUrl);
       this.description = updatedUser.description;
       this.grade = updatedUser.grade;
-      this.numberOfSubscribers = updatedUser.numberOfSubscribers;
-      this.numberOfLikes = updatedUser.numberOfLikes;
+      this.numberOfFan = updatedUser.numberOfFan;
+      this.numberOfLike = updatedUser.numberOfLike;
       this.myRecipe = updatedUser.myRecipe;
       this.likeRecipe = updatedUser.likeRecipe;
       this.subscribingUser = updatedUser.subscribingUser;
@@ -42,8 +49,8 @@ class ReadUserDetailDTO extends BaseUserDTO {
       super();
       this.description = '';
       this.grade = -1;
-      this.numberOfSubscribers = -1;
-      this.numberOfLikes = -1;
+      this.numberOfFan = -1;
+      this.numberOfLike = -1;
       this.myRecipe = [];
       this.likeRecipe = [];
       this.subscribingUser = [];
@@ -63,6 +70,11 @@ class UpdateUserDTO {
     this.confirmPassword = confirmPassword;
     this.description = description;
   }
+
+  static getEmptyUpdateUser() {
+    return new UpdateUserDTO('', '', '', '');
+  }
 }
 
 export { BaseUserDTO, ReadUserDetailDTO, UpdateUserDTO };
+export type { ReadUserDTO };

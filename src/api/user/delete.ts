@@ -1,14 +1,17 @@
+import { JWT } from '../../types/etc';
+
 const remove = {
   exit: async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/users', {
+      await fetch(`${process.env.REACT_APP_SERVER_URL_LOCAL}/api/users`, {
         method: 'DELETE',
         mode: 'cors',
+        headers: {
+          authorization: `Bearer ${localStorage.getItem(JWT)}`,
+        },
       });
-      return response.json();
     } catch (err) {
-      console.log(err);
-      return err;
+      window.location.href = '/error';
     }
   },
 };

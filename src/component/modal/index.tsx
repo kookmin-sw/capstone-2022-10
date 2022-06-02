@@ -6,6 +6,9 @@ import ConfirmSignoutModal from './confirmSignout';
 import ConfirmDeleteModal from './confirmDelete';
 import ConfirmExitModal from './confirmExit';
 import ChangeUserModal from './changeUser';
+import ImageOptionModal from './imageOption';
+import LoadingModal from './loading';
+
 
 import { ModalType } from './type';
 
@@ -19,6 +22,8 @@ const Modal: React.FC = () => {
       <ConfirmExitModal isOpen={isModalOpen && modalType === ModalType.CONFIRM_EXIT} />
       <ConfirmSignoutModal isOpen={isModalOpen && modalType === ModalType.CONFIRM_SIGNOUT} />
       <ConfirmDeleteModal isOpen={isModalOpen && modalType === ModalType.CONFIRM_DELETE} />
+      <ImageOptionModal isOpen={isModalOpen && modalType === ModalType.IMAGE_OPTION} />
+      <LoadingModal isOpen={isModalOpen && modalType === ModalType.LOADING} />
     </>
   );
 };

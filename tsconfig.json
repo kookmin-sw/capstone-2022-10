@@ -23,5 +23,7 @@
     "skipLibCheck": true,
 
     "typeRoots": ["./node_modules/@types", "@types"]
-  }
+  },
+  "proxy": "https://how-cook-ai.herokuapp.com/"
+  
 }

@@ -2,21 +2,34 @@
   "name": "frontend",
   "version": "0.1.0",
   "dependencies": {
-    "axios": "^0.26.0",
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@react-native-community/cameraroll": "^4.1.2",
+    "aws-sdk": "^2.1131.0",
     "babel-plugin-styled-components": "^2.0.6",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.0.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
     "react": "^17.0.2",
+    "react-device-detect": "^2.1.2",
     "react-dom": "^17.0.2",
+    "react-input-multiline": "^0.3.1",
     "react-modal": "^3.14.4",
+    "react-native-camera": "git+https://git@github.com/react-native-community/react-native-camera.git",
+    "react-native-permissions": "^3.3.1",
     "react-router-dom": "^6.2.2",
     "react-scripts": "5.0.0",
+    "react-webcam": "^7.0.0",
     "recoil": "^0.6.1",
     "styled-components": "^5.3.3",
     "styled-reset": "^4.3.4",
+    "util": "^0.12.4",
+    "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "production": "cross-env NODE_ENV=production react-scripts start",
+    "local": "cross-env NODE_ENV=local react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -54,7 +67,15 @@
       "max-len": 0,
       "jsx-a11y/label-has-associated-control": 0,
       "jsx-a11y/click-events-have-key-events": 0,
-      "react/jsx-no-bind": 0
+      "react/jsx-no-bind": 0,
+      "react/jsx-one-expression-per-line": 0,
+      "jsx-a11y/no-noninteractive-element-interactions": 0,
+      "no-param-reassign": 0,
+      "consistent-return": 0,
+      "import/no-extraneous-dependencies": 0,
+      "operator-linebreak": 0,
+      "no-nested-ternary": 0,
+      "react/jsx-no-useless-fragment": 0
     }
   },
   "browserslist": {
@@ -75,10 +96,13 @@
     "@types/react": "^17.0.40",
     "@types/react-dom": "^17.0.13",
     "@types/react-modal": "^3.13.1",
+    "@types/react-router": "^5.1.18",
     "@types/recoil": "^0.0.9",
     "@types/styled-components": "^5.1.24",
+    "@types/uuid": "^8.3.4",
     "eslint-config-airbnb": "^19.0.4",
     "prettier": "^2.5.1",
     "typescript": "^4.6.2"
-  }
+  },
+  "proxy": "https://how-cook-ai.herokuapp.com/"
 }

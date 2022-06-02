@@ -1,61 +1,104 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+import { useRecoilState, useSetRecoilState } from 'recoil';
 
-const NavigationBar: React.FC = () => (
-  <BackGround>
-    <Button>
-      <img src="image\icon\navBar\camera.png" height="40vw" width="40vw" alt="camera" />
-      <span>재료 촬영</span>
-    </Button>
-    <Button>
-      <img src="image\icon\navBar\imgUpload.png" height="40vw" width="40vw" alt="imgUpload" />
-      <span>사진 업로드</span>
-    </Button>
-    <Button>
-      <img src="image\icon\navBar\writeIng.png" height="40vw" width="40vw" alt="writeIng" />
-      <span>재료 입력</span>
-    </Button>
-    <Button>
-      <img src="image\icon\navBar\signIn.png" height="40vw" width="40vw" alt="signIn" />
-      <span>로그인</span>
-    </Button>
-  </BackGround>
-);
+import Modal from '../modal';
+import { isModalOpenAtom, modalTypeAtom, formDataAtom, navButtonAtom } from '../../state';
+import { ModalType } from '../modal/type';
+import { ImagePath } from '../../static';
 
-const BackGround = styled.div`
+const NavigationBar: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useRecoilState(isModalOpenAtom);
+  const setModalType = useSetRecoilState(modalTypeAtom);
+  const setNavButton = useSetRecoilState(navButtonAtom);
+  const setFormData = useSetRecoilState(formDataAtom);
+
+  function setModalHandler() {
+    setModalType(ModalType.IMAGE_OPTION);
+    setIsModalOpen(!isModalOpen);
+  }
+
+  const imageChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.currentTarget.files && e.currentTarget.files.length !== 0) {
+      setNavButton('uplaod');
+      setModalHandler();
+      const file = e.currentTarget.files[0];
+
+      const formdata = new FormData();
+      formdata.append('file', file);
+      setFormData(formdata);
+    }
+    e.currentTarget.value = '';
+  };
+
+  return (
+    <>
+      <Modal />
+      <StyledNav>
+        <ImgButton className="이미지 옵션">
+          <input accept="image/*, .txt" id="icon-button-file" type="file" capture="environment" onChange={imageChangeHandler} />
+          <label htmlFor="icon-button-file">
+            <StyledImg width="8vw" src={`${process.env.PUBLIC_URL}${ImagePath.Button.UPLOAD_IMAGE}`} alt="imgUpload" />
+            <span>이미지 업로드</span>
+          </label>
+        </ImgButton>
+        <StyledLink to="/parseResult">
+          <StyledImg width="8vw" src={`${process.env.PUBLIC_URL}${ImagePath.Button.PENCIL}`} alt="ingWrite" />
+          <span>재료 입력</span>
+        </StyledLink>
+      </StyledNav>
+    </>
+  );
+};
+
+const StyledNav = styled.nav`
   // Mobile
   overflow: hidden;
-  background-color: #ff9f1c;
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 10%;
+  width: 100vw;
+  height: 8vh;
+  background: #ff9f1c;
   box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
-  & > div {
-    float: left;
-    width: 25%;
-    height: 100%;
-    line-height: 90px;
-    margin: 0 auto;
-    align-items: center;
-    text-align: center;
-    vertical-align: middle;
-  }
-
-  @media screen and (min-width: 500px) {
-    // PC
-    height: 10%;
+  display: flex;
+  grid-template-columns: 1fr 1fr;
+  @media all and (min-aspect-ratio: 400/650) {
+    grid-template-columns: 1fr 1fr 1fr;
+    img {
+      width: 5vh;
+    }
   }
 `;
-const Button = styled.div`
-  display: grid;
-  margin-left: 0;
-  margin-right: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 0;
-  height: 30px;
+
+const StyledImg = styled.img`
+  width: ${(props) => props.width};
+  display: block;
+  margin: auto;
+`;
+
+const StyledLink = styled(Link)`
+  display: block;
+  margin: auto;
+  text-decoration: none;
+  span {
+    font-size: 10pt;
+    color: white;
+  }
+`;
+
+const ImgButton = styled.div`
+  margin: auto;
+  input {
+    display: none;
+  }
+  span {
+    font-size: 10pt;
+    color: white;
+    text-decoration: none;
+  }
 `;
 
 export default NavigationBar;

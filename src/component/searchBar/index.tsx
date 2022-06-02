@@ -1,50 +1,52 @@
-import React, { useRef, useState } from 'react';
-
-enum SearchType {
-  CHEF_NAME = 'CHEF_NAME',
-  RECIPE_NAME = 'RECIPE_NAME',
-  INGREDIENT = 'INGREDIENT',
-  TAG = 'TAG',
-}
+import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SearchType } from '../../types/enum';
+import { StyledSearchBar } from './style';
 
 const SearchBar: React.FC = () => {
-  const searchType = useRef<HTMLSelectElement>(null);
-  const PLACEHOLDER = '(레시피 / 태그 / 유저 / 재료)';
+  const selectRef = useRef<HTMLSelectElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
+  const PLACEHOLDER = '(셰프 / 레시피 / 재료 / 태그)';
+  const navigate = useNavigate();
 
   async function searchHandler() {
-    const type = searchType.current!.value;
-    if (type === '') alert('검색 카테고리를 선택해주세요');
-    switch (type) {
+    const searchType = selectRef.current!.value;
+    const input = inputRef.current!.value;
+    if (searchType === '') alert('검색 카테고리를 선택해주세요');
+    if (input === '') alert('검색어를 입력해주세요');
+    switch (searchType) {
       case SearchType.CHEF_NAME:
-        // 검색 결과 페이지로 redirect
+        navigate(`users/search?name=${input}`);
         break;
-      case SearchType.RECIPE_NAME:
-        // 검색 결과 페이지로 redirect
+      case SearchType.RECIPE_TITLE:
+        navigate(`recipes/search?title=${input}`);
         break;
       case SearchType.INGREDIENT:
-        // 검색 결과 페이지로 redirect
+        navigate(`recipes/search?ingredient=${input}`);
         break;
       case SearchType.TAG:
-        // 검색 결과 페이지로 redirect
+        navigate(`recipes/search?tag=${input}`);
         break;
       default:
+        navigate('/');
         break;
     }
   }
 
   return (
-    <div>
-      <select ref={searchType} name="SEARCH_CATEGORY" size={4}>
-        <option value={SearchType.CHEF_NAME}>{SearchType.CHEF_NAME}</option>
-        <option value={SearchType.RECIPE_NAME}>{SearchType.RECIPE_NAME}</option>
-        <option value={SearchType.INGREDIENT}>{SearchType.INGREDIENT}</option>
-        <option value={SearchType.TAG}>{SearchType.TAG}</option>
+    <StyledSearchBar>
+      <select ref={selectRef} name="SEARCH_CATEGORY" size={1}>
+        <option value="">▼</option>
+        <option value={SearchType.CHEF_NAME}>👨🏻‍🍳</option>
+        <option value={SearchType.RECIPE_TITLE}>🍽️</option>
+        <option value={SearchType.INGREDIENT}>🥕</option>
+        <option value={SearchType.TAG}>#️⃣</option>
       </select>
-      <input type="text" placeholder={PLACEHOLDER} />
+      <input id="input" ref={inputRef} type="text" placeholder={PLACEHOLDER} />
       <button type="button" onClick={searchHandler}>
         Search
       </button>
-    </div>
+    </StyledSearchBar>
   );
 };
 

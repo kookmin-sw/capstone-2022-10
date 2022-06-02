@@ -1,10 +1,10 @@
 import React from 'react';
-import Modal from 'react-modal';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSetRecoilState } from 'recoil';
 import API from '../../api';
 import { parseId } from '../../helper';
 import { isModalOpenAtom } from '../../state';
+import { StyledConfirmModal } from './style';
 
 type props = {
   isOpen: boolean;
@@ -13,25 +13,27 @@ type props = {
 const ConfirmDeleteModal: React.FC<props> = ({ isOpen }) => {
   const setIsModalOpen = useSetRecoilState(isModalOpenAtom);
   const location = useLocation();
+  const navigate = useNavigate();
 
   async function submit() {
     await API.Recipe.remove.byId(parseId(location.pathname));
     setIsModalOpen(false);
+    navigate(-1);
   }
   function cancle() {
     setIsModalOpen(false);
   }
 
   return (
-    <Modal isOpen={isOpen} onRequestClose={() => setIsModalOpen(false)} shouldCloseOnOverlayClick={false}>
-      <p>정말 삭제 하시겠습니까?</p>
-      <button type="button" onClick={cancle}>
+    <StyledConfirmModal isOpen={isOpen} onRequestClose={() => setIsModalOpen(false)} shouldCloseOnOverlayClick={false}>
+      <div className="message">정말 삭제 하시겠습니까?</div>
+      <button className="cancel" type="button" onClick={cancle}>
         아니오
       </button>
-      <button type="button" onClick={submit}>
+      <button className="submit" type="button" onClick={submit}>
         예
       </button>
-    </Modal>
+    </StyledConfirmModal>
   );
 };
 
