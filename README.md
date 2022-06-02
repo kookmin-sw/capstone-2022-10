@@ -89,7 +89,7 @@ OCR
 ```python
 pip install opencv-python
 pip install numpy as np 
-https://drive.google.com/file/d/1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV/view?usp=sharing  
+https://drive.google.com/file/d/1-F-C5ImQSp12bAmm8VaugJwn6TGeyIgy/view?usp=sharing  
 	<해당 다운로드 파일을 YOLO/weights/ 경로에 넣어주세요>
 ```
 
@@ -123,20 +123,20 @@ pip install pytesseract
 
 * Yolo모델을 사용하기 위한 코드
 ```python
-if not os.path.exists('custom-train-yolo_final.weights'):
-    url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
-    gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
+if not os.path.exists('Capstone.weights'):
+        url = 'https://drive.google.com/uc?id=1-F-C5ImQSp12bAmm8VaugJwn6TGeyIgy&export=download'
+        gdown.download(url, 'Capstone.weights', quiet = False)
     
 ##### 학습파일 다운로드 만약 이미 파일이 있다면 무시한다.
 ```
 
 ```python
-min_confidence = 0.5
+min_confidence = 0.1
 width = 800
 height = 0
 show_ratio = 1.0
 
-Weights = 'custom-train-yolo_final.weights'
+Weights = 'Capstone.weights'
 ## 학습파일
 file_name = "images/test.jpg"
 ## 테스트 이미지 
@@ -158,13 +158,13 @@ class_count = 50
 ``` python
 color_lists = np.random.uniform(0, 255, size= (len(classes), 3))
 layer_names = net.getLayerNames()
-output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
+output_layers = ['yolo_139', 'yolo_150', 'yolo_161']
 
 img = cv2.imread(file_name)
 
 h,w = img.shape[:2]
 height = int(h * width / w)
-blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False
+blob = cv2.dnn.blobFromImage(img, 0.00392, (608,608), swapRB=True, crop=False
 							 )
 
 net.setInput(blob)
