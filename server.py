@@ -89,16 +89,17 @@ def readReceiptImg(img):
 
 
 def readIngredientImg(img):
-    if not os.path.exists('custom-train-yolo_final.weights'):
-        url = 'https://drive.google.com/uc?id=1ol3yLt2zao2ZQB_t4DSbmOU-BWUag6LV&export=download'
-        gdown.download(url, 'custom-train-yolo_final.weights', quiet = False)
+    if not os.path.exists('Capstone.weights'):
+        url = 'https://drive.google.com/uc?id=1-F-C5ImQSp12bAmm8VaugJwn6TGeyIgy&export=download'
+        gdown.download(url, 'Capstone.weights', quiet = False)
 
 
-    Weights = 'custom-train-yolo_final.weights'
-    test_cfg = 'custom-test-yolo.cfg'
+    Weights = 'Capstone.weights'
+    test_cfg = 'Capstone.cfg'
     net = cv2.dnn.readNetFromDarknet(test_cfg,Weights)
     layer_names = net.getLayerNames()
-    output_layers = ['yolo_82', 'yolo_94', 'yolo_106']
+    output_layers = ['yolo_139', 'yolo_150', 'yolo_161']
+    
     classes = ["문어","새송이버섯","블루베리","방울토마토","무", "배", "콩나물"
            ,"꽃게","양배추", "양파", "새우", "시금치", "깻잎", "애호박", "밥", "옥수수"
            ,"마늘", "바지락", "감자", "수박", "브로콜리", "오이", "멜론", "파", "오징어"
@@ -108,7 +109,7 @@ def readIngredientImg(img):
 
     class_count = 50
 
-    min_confidence = 0.5
+    min_confidence = 0.1
     width = 800
     height = 0
     show_ratio = 1.0
@@ -117,7 +118,7 @@ def readIngredientImg(img):
     boxes = []
     h,w = img.shape[:2]
     height = int(h * width / w)
-    blob = cv2.dnn.blobFromImage(img, 0.00392, (416,416), swapRB=True, crop=False)
+    blob = cv2.dnn.blobFromImage(img, 0.00392, (608,608), swapRB=True, crop=False)
     net.setInput(blob)
     outs = net.forward(output_layers)
     
