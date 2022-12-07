@@ -11,8 +11,9 @@ yarn install
 ### 실행
 ``` shell
 # 실행 순서를 지켜주세요
-node ingredient.js
-node recipe.js
-node recipeDescription.js
-node recipeIngredient.js
+1. node ingredient.js 실행
+2. MySQL를 통해 admin 계정 생성
+3. node recipe.js
+4. node recipeDescription.js
+5. node recipeIngredient.js
 ```
