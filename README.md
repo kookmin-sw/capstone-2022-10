@@ -32,7 +32,9 @@ We want to implement a function that searches for a recipe based on the recognit
 - 📎 [How Cook 최종 발표 시연 영상](https://drive.google.com/file/d/1iwlFLvjxY5SfoEoZa51Txzwvn8grWG7H/view?usp=sharing)
 - 📎 [How Cook 수행결과보고서 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%EC%88%98%ED%96%89%EA%B2%B0%EA%B3%BC%EB%B3%B4%EA%B3%A0%EC%84%9C.pdf?raw=True)
 - 📎 [How Cook 포스터 PDF](https://docs.google.com/viewer?url=https://github.com/kookmin-sw/capstone-2022-10/blob/master/img/%ED%8C%8010-%ED%8F%AC%EC%8A%A4%ED%84%B0.pdf?raw=True)
-- 📎 [How Cook 서비스](http://3.37.229.176/)
+- 📎 How Cook 서비스(종료)
+- 📎 [How Cook 서비스 결과물 발표자료(2022 SW 인재 페스티벌)](https://docs.google.com/presentation/d/1zjDK0YWeMKN8wXp31XpC4YNqxci-s3z4XaOC9903IGA/edit?usp=sharing)
+
 
 ## 🎥프로젝트 소개 동영상
 
